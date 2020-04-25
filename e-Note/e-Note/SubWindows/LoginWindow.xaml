@@ -1,0 +1,18 @@
+﻿<Window x:Name="Window" x:Class="e_Note.SubWindows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:e_Note.SubWindows"
+        mc:Ignorable="d"
+        Title="ide jön a cím" Height="200" Width="400">
+    <Grid>
+        <Label x:Name="Input" Content="ide meg valami olyan hogy lépjé mán be"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="374" Height="60" FontSize="20"/>
+        <PasswordBox x:Name="Passw" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="374" Height="59" FontSize="24"/>
+        <ComboBox x:Name="Choser" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Choser_SelectionChanged" Loaded="Choser_Loaded">
+            <ComboBoxItem x:Name="EN" Content="EN" />
+            <ComboBoxItem Content="HU"/>
+        </ComboBox>
+        <Button Content="belépő gomb" HorizontalAlignment="Left" Margin="234,141,0,0" VerticalAlignment="Top" Width="150"/>
+    </Grid>
+</Window>

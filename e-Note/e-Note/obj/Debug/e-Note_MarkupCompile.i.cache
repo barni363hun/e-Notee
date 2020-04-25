@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\
 e_Note
 none
 false
 DEBUG;TRACE
-C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\App.xaml
-11151548125
+D:\programming\e-Notee\e-Note\e-Note\App.xaml
+2-528086972
 
-6-1817767780
+12516442471
 13-1505183044
-MainWindow.xaml;
+MainWindow.xaml;SubWindows\LoginWindow.xaml;
 
-True
+False
 

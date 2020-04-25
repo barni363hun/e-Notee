@@ -1,0 +1,34 @@
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\bin\Debug\e-Note.exe.config
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\bin\Debug\e-Note.exe
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\bin\Debug\e-Note.pdb
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note.csprojAssemblyReference.cache
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\MainWindow.g.cs
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\SubWindows\LoginWindow.g.cs
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\App.g.cs
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note_MarkupCompile.cache
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note_MarkupCompile.lref
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\MainWindow.baml
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\SubWindows\LoginWindow.baml
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note.g.resources
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e_Note.Properties.Resources.resources
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note.csproj.GenerateResource.cache
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note.csproj.CoreCompileInputs.cache
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note.exe
+C:\Users\Princzes Barnabás\source\repos\e-Note\e-Note\obj\Debug\e-Note.pdb
+D:\programming\e-Notee\e-Note\e-Note\bin\Debug\e-Note.exe.config
+D:\programming\e-Notee\e-Note\e-Note\bin\Debug\e-Note.exe
+D:\programming\e-Notee\e-Note\e-Note\bin\Debug\e-Note.pdb
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csprojAssemblyReference.cache
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\MainWindow.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\LoginWindow.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\App.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note_MarkupCompile.cache
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note_MarkupCompile.lref
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\MainWindow.baml
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\LoginWindow.baml
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.g.resources
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e_Note.Properties.Resources.resources
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.GenerateResource.cache
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.CoreCompileInputs.cache
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.exe
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.pdb

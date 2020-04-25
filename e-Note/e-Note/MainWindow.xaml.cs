@@ -1,4 +1,6 @@
-﻿using System;
+﻿using e_Note.Classes;
+using e_Note.Classes.Leanguages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
