@@ -1,5 +1,6 @@
 ﻿using e_Note.Classes;
 using e_Note.Classes.Leanguages;
+using e_Note.SubWindows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,10 @@ namespace e_Note
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(string eNodeData)
         {
             InitializeComponent();
+            Test.Content = eNodeData;
         }
     }
 }

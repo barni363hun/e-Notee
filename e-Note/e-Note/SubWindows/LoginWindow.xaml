@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="ide jön a cím" Height="200" Width="400">
     <Grid>
-        <Label x:Name="Input" Content="ide meg valami olyan hogy lépjé mán be"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="374" Height="60" FontSize="20"/>
-        <PasswordBox x:Name="Passw" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top" Width="374" Height="59" FontSize="24"/>
-        <ComboBox x:Name="Choser" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Choser_SelectionChanged" Loaded="Choser_Loaded">
+        <Label x:Name="Input" Content="ide meg valami olyan hogy lépjé mán be"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="374" Height="40" FontSize="20"/>
+        <PasswordBox x:Name="Passw" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="179" Height="38" FontSize="24"/>
+        <ComboBox x:Name="Choser" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="94" SelectionChanged="Choser_SelectionChanged" Loaded="Choser_Loaded">
             <ComboBoxItem x:Name="EN" Content="EN" />
             <ComboBoxItem Content="HU"/>
         </ComboBox>
-        <Button Content="belépő gomb" HorizontalAlignment="Left" Margin="234,141,0,0" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="Login" Content="belépő gomb" HorizontalAlignment="Left" Margin="234,139,0,0" VerticalAlignment="Top" Width="150" Height="22" Click="Login_Click"/>
+        <Button x:Name="OpenFile" Content="Open file" HorizontalAlignment="Left" Margin="133,139,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="OpenFile_Click"/>
+        <Label x:Name="Test" Content="Label" HorizontalAlignment="Left" Margin="272,76,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

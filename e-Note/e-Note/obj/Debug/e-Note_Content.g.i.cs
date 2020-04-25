@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dev-help.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/key.txt")]
 
 

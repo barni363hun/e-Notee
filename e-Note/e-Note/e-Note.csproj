@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Encryption\Crypto.cs" />
     <Compile Include="Classes\Languages\English.cs" />
     <Compile Include="Classes\Languages\Hungarian.cs" />
     <Compile Include="Classes\Languages\ChosenLanguge.cs" />

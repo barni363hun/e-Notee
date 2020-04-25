@@ -1,4 +1,5 @@
-﻿using e_Note.Classes.Leanguages;
+﻿using e_Note.Classes.Encryption;
+using e_Note.Classes.Leanguages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,12 @@ namespace e_Note.Classes
 {
     class Options
     {
-        public ChosenLanguge Language;
+        public ChosenLanguge language;
+        public Crypto crypto;
         public Options()
         {
-            Language = new ChosenLanguge();
+            language = new ChosenLanguge();
+            crypto = new Crypto(); 
         }
     }
 }
