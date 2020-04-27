@@ -1,6 +1,10 @@
 test
 alma
+<<<<<<< HEAD
 
 
 
 khgoiuhljkm
+=======
+master megy
+>>>>>>> master
