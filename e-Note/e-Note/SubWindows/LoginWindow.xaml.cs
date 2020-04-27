@@ -42,6 +42,7 @@ namespace e_Note.SubWindows
         {
             Window.Title = options.language.Content.LoginWindow_Title;
             Input.Content = options.language.Content.LoginWindow_Input;
+            Login.Content = options.language.Content.LoginWindow_LoginButton;
         }
         private void Choser_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -78,6 +79,14 @@ namespace e_Note.SubWindows
                         Window.Close();
                         mainWindow.Show();
                     }
+                    else
+                    {
+                        //rossz jelszót adtál meg
+                    }
+                }
+                else
+                {
+                    //nem irtál be semmit jelszónak!
                 }
             }
             else

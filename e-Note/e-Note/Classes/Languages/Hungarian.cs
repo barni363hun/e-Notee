@@ -17,7 +17,8 @@ namespace e_Note.Classes.Leanguages
             Content = new LanguageContent
             {
                 LoginWindow_Input = "Írd be a mester-kulcsot:",
-                LoginWindow_Title = "Bejelentkezés"
+                LoginWindow_Title = "Bejelentkezés",
+                LoginWindow_LoginButton = "Belépek!"
             };
         }
     }

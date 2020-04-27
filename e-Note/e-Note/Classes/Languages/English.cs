@@ -17,7 +17,8 @@ namespace e_Note.Classes.Leanguages
             Content = new LanguageContent
             {
                 LoginWindow_Input = "Type in the master-key:",
-                LoginWindow_Title = "Login"
+                LoginWindow_Title = "Login",
+                LoginWindow_LoginButton = "LoginButton"
             };
         }
     }
