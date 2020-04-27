@@ -7,3 +7,5 @@ alma
 Alexa branch tested by barni
 lol
 >>>>>>> Alexa
+
+valamik

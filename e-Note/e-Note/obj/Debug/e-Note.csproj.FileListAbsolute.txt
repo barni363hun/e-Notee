@@ -32,3 +32,20 @@ D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.GenerateResource.ca
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.CoreCompileInputs.cache
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.exe
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note.pdb
+D:\prog projekt\e-Notee\e-Note\e-Note\bin\Debug\e-Note.exe.config
+D:\prog projekt\e-Notee\e-Note\e-Note\bin\Debug\e-Note.exe
+D:\prog projekt\e-Notee\e-Note\e-Note\bin\Debug\e-Note.pdb
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csprojAssemblyReference.cache
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\MainWindow.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\LoginWindow.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\App.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note_MarkupCompile.cache
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note_MarkupCompile.lref
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\MainWindow.baml
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\LoginWindow.baml
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.g.resources
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e_Note.Properties.Resources.resources
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.GenerateResource.cache
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.CoreCompileInputs.cache
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.exe
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.pdb
