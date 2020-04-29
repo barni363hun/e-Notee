@@ -19,6 +19,7 @@ namespace e_Note.Classes.Leanguages
                 LoginWindow_Input = "Type in the master-key:",
                 LoginWindow_Title = "Login",
                 LoginWindow_LoginButton = "LoginButton"
+               
             };
         }
     }

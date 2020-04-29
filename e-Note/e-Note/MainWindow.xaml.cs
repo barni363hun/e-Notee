@@ -26,7 +26,32 @@ namespace e_Note
         public MainWindow(string eNodeData)
         {
             InitializeComponent();
-            Test.Content = eNodeData;
+           
+            //Test.Content = eNodeData;
+        }
+
+        Options options = new Options();
+        private void Refresh()
+        {
+            
+        }
+        private void Language_Loaded(object sender, RoutedEventArgs e)
+        {
+            Language.SelectedItem = EN;
+        }
+
+        private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            options.language.ChoseType(((ComboBoxItem)Language.SelectedItem).Content.ToString());
+            Refresh();
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Enter)
+            {
+
+            }
         }
     }
 }

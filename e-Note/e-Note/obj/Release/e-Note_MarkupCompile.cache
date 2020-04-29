@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Release\
 e_Note
 none
 false
-DEBUG;TRACE
+TRACE
 D:\prog projekt\e-Notee\e-Note\e-Note\App.xaml
 2-528086972
 
-14-510730523
+12-78970002
 13-1505183044
 MainWindow.xaml;SubWindows\LoginWindow.xaml;
 
-False
+True
 

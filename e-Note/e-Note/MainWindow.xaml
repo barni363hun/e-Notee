@@ -7,7 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label x:Name="Test" Content="Label" HorizontalAlignment="Left" Margin="349,251,0,0" VerticalAlignment="Top"/>
 
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
+            <Grid >
+
+
+
+                <TextBox x:Name="Kereso" Background="LightGray" Height="34" VerticalAlignment="Top" Margin="453,23,102,0" KeyDown="TextBox_KeyDown"/>
+                <ComboBox x:Name="Language" HorizontalAlignment="Left" Margin="23,23,0,0" VerticalAlignment="Top" Width="51" Height="34" RenderTransformOrigin="0.604,0.235" Loaded="Language_Loaded" SelectionChanged="Language_SelectionChanged">
+                    <ComboBoxItem x:Name="EN" Content="EN"/>
+                    <ComboBoxItem Content="HU"/>
+                </ComboBox>
+                <ComboBox x:Name="View" HorizontalAlignment="Left" Margin="172,23,0,0" VerticalAlignment="Top" Width="120" Height="34">
+                    <ComboBoxItem Content="Grid"/>
+                    <ComboBoxItem Content="List"/>
+                </ComboBox>
+                <ListBox HorizontalAlignment="Left" Height="273" Margin="10,91,0,0" VerticalAlignment="Top" Width="772">
+                    <Grid Height="135" Width="150"/>
+                    <Grid Height="135" Width="150"/>
+                   
+                </ListBox>
+                
+
+
+
+            </Grid>
+        </Border>
     </Grid>
 </Window>

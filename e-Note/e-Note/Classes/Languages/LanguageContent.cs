@@ -11,5 +11,6 @@ namespace e_Note.Classes.Leanguages
         public string LoginWindow_Input;
         public string LoginWindow_Title;
         public string LoginWindow_LoginButton;
+       
     }
 }
