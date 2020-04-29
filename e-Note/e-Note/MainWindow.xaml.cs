@@ -3,6 +3,7 @@ using e_Note.Classes.Leanguages;
 using e_Note.SubWindows;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,9 @@ namespace e_Note
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Jegyzet> jegyzetek = new List<Jegyzet>();
+        List<string> adatok = new List<string>();
+
         public MainWindow(string eNodeData)
         {
             InitializeComponent();
@@ -30,28 +34,41 @@ namespace e_Note
             //Test.Content = eNodeData;
         }
 
-        Options options = new Options();
-        private void Refresh()
+        private void Fajlbeolvas(string fájl)
         {
-            
-        }
-        private void Language_Loaded(object sender, RoutedEventArgs e)
-        {
-            Language.SelectedItem = EN;
+            StreamReader sr = new StreamReader(fájl);
+            sr.ReadLine();
+            while (!sr.EndOfStream)
+            {
+                jegyzetek.Add(new Jegyzet(sr.ReadLine()));
+            }
+
+            sr.Close();
         }
 
-        private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            options.language.ChoseType(((ComboBoxItem)Language.SelectedItem).Content.ToString());
-            Refresh();
-        }
+
+
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key==Key.Enter)
             {
-
+                Jegyzet j = new Jegyzet();
+                if (j.AlmaCimke==Kereso.Text)
+                {
+                    adatok.Add(j.Cim + j.Tartalom + j.Cimke);
+                    Lista.Items.Refresh();
+                }
             }
+        }
+
+        private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if ()
+            {
+                
+            }
+            
         }
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Classes\Languages\ChosenLanguge.cs" />
     <Compile Include="Classes\Languages\LanguageContent.cs" />
     <Compile Include="Classes\Options.cs" />
+    <Compile Include="Jegyzet.cs" />
     <Compile Include="SubWindows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
