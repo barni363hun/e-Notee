@@ -26,6 +26,7 @@ namespace e_Note
     {
         List<Jegyzet> jegyzetek = new List<Jegyzet>();
         List<string> adatok = new List<string>();
+        List<string> grid = new List<string>();
 
         public MainWindow(string eNodeData)
         {
@@ -64,11 +65,20 @@ namespace e_Note
 
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if ()
+            Jegyzet j = new Jegyzet();
+            if (View.SelectedItem.ToString()=="Grid")
             {
-                
+
+                grid.Add(j.Cim + j.Tartalom + j.Cimke);
+                adatok.Remove();
+                Lista.Items.Refresh();
             }
-            
+            else
+            {
+                adatok.Add(j.Cim + j.Tartalom + j.Cimke);
+                grid.Remove();
+                Lista.Items.Refresh();
+            }
         }
     }
 }

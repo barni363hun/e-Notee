@@ -22,12 +22,13 @@
                     <ComboBoxItem x:Name="Grid" Content="Grid"/>
                     <ComboBoxItem x:Name="List" Content="List"/>
                 </ComboBox>
-                <ListBox x:Name="Lista" HorizontalAlignment="Left" Height="273" Margin="10,91,0,0" VerticalAlignment="Top" Width="772">
+                <ListBox x:Name="Lista" HorizontalAlignment="Left" Height="317" Margin="10,91,0,0" VerticalAlignment="Top" Width="772">
                     
                    
                 </ListBox>
-                <Grid HorizontalAlignment="Left" Height="100" Margin="23,102,0,0" VerticalAlignment="Top" Width="100"/>
-                
+                <Grid x:Name="Gridek" HorizontalAlignment="Left" Height="317" Margin="10,91,0,0" VerticalAlignment="Top" Width="772"/>
+
+
 
 
 
