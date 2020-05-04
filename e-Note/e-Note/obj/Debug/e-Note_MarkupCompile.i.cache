@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿e-Note
 
 
@@ -18,3 +19,25 @@ MainWindow.xaml;SubWindows\LoginWindow.xaml;
 
 True
 
+=======
+﻿e-Note
+
+
+winexe
+C#
+.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\
+e_Note
+none
+false
+DEBUG;TRACE
+D:\programming\e-Notee\e-Note\e-Note\App.xaml
+2-528086972
+
+13121008720
+13-1505183044
+MainWindow.xaml;SubWindows\LoginWindow.xaml;
+
+True
+
+>>>>>>> Barni
