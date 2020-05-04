@@ -25,16 +25,37 @@ namespace e_Note
     public partial class MainWindow : Window
     {
         List<Jegyzet> jegyzetek = new List<Jegyzet>();
-        List<string> adatok = new List<string>();
+        List<string> kiírandójegyzetek = new List<string>();
         List<string> grid = new List<string>();
 
         public MainWindow(string eNodeData)
         {
             InitializeComponent();
-           
+            Refresh();
             //Test.Content = eNodeData;
         }
+        private void Refresh()
+        {
+            foreach (var jegyzetitem in jegyzetek)
+            {
+                foreach (var kji in kiírandójegyzetek) //kji = kiírandójegyzetitem
+                {
+                    if (kji == jegyzetitem.Cim)
+                    {
+                        if (View.SelectedItem.ToString() == "Grid")
+                        {
+                            //jegyzetek kiírása gridekként dinamikusan (3/sor)
+                        }
+                        else
+                        {
+                            //jegyzetek kiírása gridekként dinamikusan (1/sor)
+                        }
 
+                    }
+                }
+            }
+            
+        }
         private void Fajlbeolvas(string fájl)
         {
             StreamReader sr = new StreamReader(fájl);
@@ -43,42 +64,37 @@ namespace e_Note
             {
                 jegyzetek.Add(new Jegyzet(sr.ReadLine()));
             }
-
             sr.Close();
         }
-
-
-
-
-        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key==Key.Enter)
+            if (e.Key == Key.Enter)
             {
-                Jegyzet j = new Jegyzet();
-                if (j.AlmaCimke==Kereso.Text)
+                if (Kereso.Text == "")
                 {
-                    adatok.Add(j.Cim + j.Tartalom + j.Cimke);
-                    Lista.Items.Refresh();
+                    kiírandójegyzetek.Clear();
+                }
+                else
+                {
+                    foreach (Jegyzet jegyzetitem in jegyzetek)
+                    {
+                        foreach (var cimke in jegyzetitem.Címkék)
+                        {
+                            string keresendő = Kereso.Text;
+                            if (cimke == keresendő)
+                            {
+                                kiírandójegyzetek.Add(jegyzetitem.Cim);
+                            }
+                        }
+                    }
                 }
             }
+            Refresh();
         }
 
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Jegyzet j = new Jegyzet();
-            if (View.SelectedItem.ToString()=="Grid")
-            {
-
-                grid.Add(j.Cim + j.Tartalom + j.Cimke);
-                adatok.Remove();
-                Lista.Items.Refresh();
-            }
-            else
-            {
-                adatok.Add(j.Cim + j.Tartalom + j.Cimke);
-                grid.Remove();
-                Lista.Items.Refresh();
-            }
+            Refresh();
         }
     }
 }

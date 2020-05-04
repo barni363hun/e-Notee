@@ -7,32 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
         <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1">
             <Grid >
-
-
-
-                <TextBox x:Name="Kereso" Background="LightGray" Height="34" VerticalAlignment="Top" Margin="453,23,102,0" KeyDown="TextBox_KeyDown"/>
-                <ComboBox x:Name="Language" HorizontalAlignment="Left" Margin="23,23,0,0" VerticalAlignment="Top" Width="51" Height="34" RenderTransformOrigin="0.604,0.235">
+                <TextBox x:Name="Kereso" Background="LightGray" Height="34" VerticalAlignment="Top" Margin="453,23,102,0" KeyDown="Kereso_KeyDown"/>
+                <ComboBox x:Name="Language" HorizontalAlignment="Left" Margin="61,23,0,0" VerticalAlignment="Top" Width="51" Height="34" RenderTransformOrigin="0.604,0.235">
                     <ComboBoxItem x:Name="EN" Content="EN"/>
                     <ComboBoxItem Content="HU"/>
                 </ComboBox>
-                <ComboBox x:Name="View" HorizontalAlignment="Left" Margin="172,23,0,0" VerticalAlignment="Top" Width="120" Height="34" SelectionChanged="View_SelectionChanged">
+                <ComboBox x:Name="View" HorizontalAlignment="Left" Margin="215,23,0,0" VerticalAlignment="Top" Width="120" Height="34" SelectionChanged="View_SelectionChanged">
                     <ComboBoxItem x:Name="Grid" Content="Grid"/>
                     <ComboBoxItem x:Name="List" Content="List"/>
                 </ComboBox>
-                <ListBox x:Name="Lista" HorizontalAlignment="Left" Height="317" Margin="10,91,0,0" VerticalAlignment="Top" Width="772">
-                    
-                   
-                </ListBox>
-                <Grid x:Name="Gridek" HorizontalAlignment="Left" Height="317" Margin="10,91,0,0" VerticalAlignment="Top" Width="772"/>
-
-
-
-
-
-
             </Grid>
         </Border>
     </Grid>

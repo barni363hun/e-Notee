@@ -12,21 +12,22 @@ namespace e_Note
 
         public string Cim;
         public string Tartalom;
-        public string Cimke;
-        public string AlmaCimke;
+        public string[] Címkék;
+
+        private string Cimketömb;
 
         public Jegyzet(string sor)
         {
             string[] adatok = sor.Split(new string[] { "ZgjGBluXS5bQlKPDGyAa" }, StringSplitOptions.None);
             Cim = adatok[0];
             Tartalom = adatok[1];
-            Cimke = adatok[2];
-            string[] cimke = Cimke.Split(new string[] { "zegShZXeBAxXtoEGTa7P" }, StringSplitOptions.None);
-            AlmaCimke = cimke[1];
+            Cimketömb = adatok[2];
+            Címkék = Cimketömb.Split(new string[] { "zegShZXeBAxXtoEGTa7P" }, StringSplitOptions.None);
         }
 
         public Jegyzet()
         {
+
         }
     }
 }
