@@ -1,5 +1,4 @@
 ﻿using e_Note.Classes;
-using e_Note.Classes.Leanguages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +33,7 @@ namespace e_Note.SubWindows
         {
             InitializeComponent();
             Refresh();
-            //File.WriteAllText(eNoteData, Options.crypto.EncryptStringAES("titok","password")); //eNoteData generálás
+            
         }
 
 
@@ -81,17 +80,21 @@ namespace e_Note.SubWindows
                     }
                     else
                     {
-                        //rossz jelszót adtál meg
+                        MessageBox.Show("Rossz jelszót adtál meg!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
                     }
                 }
                 else
                 {
-                    //nem irtál be semmit jelszónak!
+                    MessageBox.Show("Nem adtál meg jelszót!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
                 }
             }
             else
             {
-                 //ide kell rakni feltételeket
+                MessageBoxResult result = MessageBox.Show("Elfelejtetted megnyitni az eNoteData fájlodat? Ha nem-re nyomsz generálok egyet magam mellé. Ha van már mellém generálva fájl akkor felülírom azt.", "Elfelejtetted?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
+                if (result == MessageBoxResult.No)
+                {
+                    File.WriteAllText(path.Replace("e-Note.exe","") + "Save.eNoteData", options.crypto.EncryptStringAES("", "password")); //nyelv
+                }
             }
         }
     }

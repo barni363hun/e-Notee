@@ -92,7 +92,6 @@ namespace e_Note.Classes.Encryption
             }
             catch (System.Security.Cryptography.CryptographicException e)
             {
-                MessageBox.Show("Nem talált!", "Helytelen jelszó!",MessageBoxButton.OK, MessageBoxImage.Error);
                 return "nope";
             }
             finally
