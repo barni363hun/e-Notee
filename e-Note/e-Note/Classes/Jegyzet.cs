@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace e_Note
 {
-    class Jegyzet
+    public class Jegyzet
     {
-
-
         public string Cim;
         public string Tartalom;
         public string[] Címkék;

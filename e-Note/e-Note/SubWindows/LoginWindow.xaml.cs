@@ -25,6 +25,7 @@ namespace e_Note.SubWindows
     /// </summary>
     public partial class LoginWindow : Window
     {
+        public MainWindow mainWindow;
         Options options = new Options();
         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
         OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -32,10 +33,10 @@ namespace e_Note.SubWindows
         public LoginWindow()
         {
             InitializeComponent();
+            //this.Window.WindowStyle = WindowStyle.None;
+            this.Window.ResizeMode = ResizeMode.NoResize;
             Refresh();
-            
         }
-
 
         private void Refresh()
         {
@@ -67,7 +68,12 @@ namespace e_Note.SubWindows
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            if (fileOpeneble)
+            options.password = Passw.Password;
+            options.path = File.ReadAllText(openFileDialog.FileName);
+            mainWindow = new MainWindow(options);
+            Window.Close();
+            mainWindow.Show();
+            /*if (fileOpeneble)
             {
                 if (Passw.Password!="")
                 {
@@ -95,7 +101,7 @@ namespace e_Note.SubWindows
                 {
                     File.WriteAllText(path.Replace("e-Note.exe","") + "Save.eNoteData", options.crypto.EncryptStringAES("", "password")); //nyelv
                 }
-            }
+            }*/
         }
     }
 }

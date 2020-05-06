@@ -8,7 +8,7 @@ using System.Windows.Markup;
 
 namespace e_Note.Classes.Leanguages
 {
-    class ChosenLanguge
+    public class ChosenLanguge
     {
 
         English eng;

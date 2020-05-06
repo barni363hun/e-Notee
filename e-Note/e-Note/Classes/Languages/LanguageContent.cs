@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace e_Note.Classes.Leanguages
 {
-    class LanguageContent
+    public class LanguageContent
     {
         public string LoginWindow_Input;
         public string LoginWindow_Title;

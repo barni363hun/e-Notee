@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace e_Note.Classes.Encryption
 {
-    class Crypto
+    public class Crypto
     {
         private static byte[] _salt = Encoding.ASCII.GetBytes("ezakulcsamindennek");
         /// AES titkoítás a sharedSecret kulcsszóval

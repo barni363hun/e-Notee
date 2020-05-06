@@ -65,6 +65,9 @@
     <Compile Include="SubWindows\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubWindows\NoteCreator.xaml.cs">
+      <DependentUpon>NoteCreator.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,6 +81,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SubWindows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubWindows\NoteCreator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,11 +115,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="dev-help.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Mainbgdark.jpg" />
+    <Content Include="Assets\Background.wmv" />
+    <Content Include="Assets\Background.mp4" />
+    <Resource Include="Mainbglight.jpg" />
+    <Resource Include="Assets\Mainbglight.jpg" />
+    <Resource Include="SubWindows\bgphoto.png" />
+    <Resource Include="Assets\bgphoto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

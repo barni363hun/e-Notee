@@ -24,17 +24,31 @@ namespace e_Note
     /// </summary>
     public partial class MainWindow : Window
     {
+        Options options;
         List<Jegyzet> jegyzetek = new List<Jegyzet>();
         List<string> kiírandójegyzetek = new List<string>();
         List<string> grid = new List<string>();
 
-        public MainWindow(string eNodeData)
+        public MainWindow(Options beállítások)
         {
+            options = beállítások;
             InitializeComponent();
             Refresh();
             //Test.Content = eNodeData;
         }
         private void Refresh()
+        {
+            if (options.DarkMode)
+            {
+                SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 128, 0, 0));
+            }
+            else
+            {
+                SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 210, 105, 30));
+            }
+        }
+
+        private void Search()
         {
             foreach (var jegyzetitem in jegyzetek)
             {
@@ -50,21 +64,20 @@ namespace e_Note
                         {
                             //jegyzetek kiírása gridekként dinamikusan (1/sor)
                         }
-
                     }
                 }
             }
-            
         }
-        private void Fajlbeolvas(string fájl)
+        public List<Jegyzet> Jegyzethozzáfűz(string fájl, List<Jegyzet> jegyzetekek)
         {
             StreamReader sr = new StreamReader(fájl);
             sr.ReadLine();
             while (!sr.EndOfStream)
             {
-                jegyzetek.Add(new Jegyzet(sr.ReadLine()));
+                jegyzetekek.Add(new Jegyzet(sr.ReadLine()));
             }
             sr.Close();
+            return jegyzetekek;
         }
         private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
@@ -91,10 +104,27 @@ namespace e_Note
             }
             Refresh();
         }
-
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Refresh();
+        }
+        private void Language_Loaded(object sender, RoutedEventArgs e)
+        {
+            Language.SelectedItem = EN;
+        }
+        private void View_Loaded(object sender, RoutedEventArgs e)
+        {
+            View.SelectedItem = Grid;
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            options.DarkMode = !options.DarkMode;
+            Refresh();
+        }
+        private void AddNote_Click(object sender, RoutedEventArgs e)
+        {
+            NoteCreator NoteCreatorWindow = new NoteCreator(options);
+            NoteCreatorWindow.Show();
         }
     }
 }

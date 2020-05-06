@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿e-Note
 
 
@@ -11,33 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\programming\e-Notee\e-Note\e-Note\App.xaml
-2-528086972
-
-14-1594863638
+31355114663
+2150179798
+15-542607197
 13-1505183044
-MainWindow.xaml;SubWindows\LoginWindow.xaml;
+MainWindow.xaml;SubWindows\LoginWindow.xaml;SubWindows\NoteCreator.xaml;
 
 True
 
-=======
-﻿e-Note
-
-
-winexe
-C#
-.cs
-D:\programming\e-Notee\e-Note\e-Note\obj\Debug\
-e_Note
-none
-false
-DEBUG;TRACE
-D:\programming\e-Notee\e-Note\e-Note\App.xaml
-2-528086972
-
-13121008720
-13-1505183044
-MainWindow.xaml;SubWindows\LoginWindow.xaml;
-
-True
-
->>>>>>> Barni

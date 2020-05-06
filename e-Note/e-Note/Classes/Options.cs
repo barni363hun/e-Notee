@@ -8,14 +8,23 @@ using System.Threading.Tasks;
 
 namespace e_Note.Classes
 {
-    class Options
+    public class Options
     {
         public ChosenLanguge language;
         public Crypto crypto;
+        public bool DarkMode;
+        public string password;
+        public string path;
+        public Options(string jelszo, string elérésiút)
+        {
+            language = new ChosenLanguge();
+            crypto = new Crypto();
+            DarkMode = false;
+        }
         public Options()
         {
             language = new ChosenLanguge();
-            crypto = new Crypto(); 
+            crypto = new Crypto();
         }
     }
 }
