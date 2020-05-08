@@ -68,17 +68,7 @@ namespace e_Note
                 }
             }
         }
-        public List<Jegyzet> Jegyzethozzáfűz(string fájl, List<Jegyzet> jegyzetekek)
-        {
-            StreamReader sr = new StreamReader(fájl);
-            sr.ReadLine();
-            while (!sr.EndOfStream)
-            {
-                jegyzetekek.Add(new Jegyzet(sr.ReadLine()));
-            }
-            sr.Close();
-            return jegyzetekek;
-        }
+        
         private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -118,8 +108,14 @@ namespace e_Note
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            options.DarkMode = !options.DarkMode;
-            Refresh();
+            List<Jegyzet> lista = new List<Jegyzet>();
+            string[] címkék = { "asd", "dsa" };
+            lista.Add(new Jegyzet("sima", "Tesztcímke", "Teszt tartalom", címkék));
+            string újfájl = options.Jegyzettömbstringbe(lista);
+            File.WriteAllText(options.path, options.crypto.EncryptStringAES(újfájl, options.password));
+
+            //options.DarkMode = !options.DarkMode;
+            //Refresh();
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {

@@ -27,13 +27,36 @@ namespace e_Note.SubWindows
         {
             options = beállítások;
             InitializeComponent();
+            List<Jegyzet> testt = options.Fájlbeolvas();
+            if (testt.Count>0)
+            {
+                foreach (var item in testt)
+                {
+                    L_Cím.Content = item.Cim;
+                    foreach (var cimke in item.Címkék)
+                    {
+                        L_Címkék.Content += cimke;
+                    }
+                    L_Tartalom.Content = item.Tartalom;
+                }
+            }
         }
 
         private void Kész_Click(object sender, RoutedEventArgs e)
         {
-            string eNoteData = options.crypto.DecryptStringAES(options.path,options.password);
-            //eNoteData stringből jegyzet tömb majd visszafordít
-            File.WriteAllText(options.path, options.crypto.EncryptStringAES("", options.password));
+            List<Jegyzet> lista = options.Fájlbeolvas();
+            //List<Jegyzet> lista = new List<Jegyzet>();
+            string[] címkék = Címkék.Text.Split(',');
+            Jegyzet felvevendő = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
+            //Jegyzet testtt = new Jegyzet("sima", "címe", "tartalma", címkék);
+            lista.Add(felvevendő);
+            /*foreach (var item in lista)
+            {
+                L_Cím.Content = item.Cim;
+                L_Tartalom.Content = item.Tartalom;
+            }*/
+            string újfájl = options.Jegyzettömbstringbe(lista); 
+            File.WriteAllText(options.path, options.crypto.EncryptStringAES(újfájl.ToString(), options.password));
         }
     }
 }

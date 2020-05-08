@@ -69,10 +69,14 @@ namespace e_Note.SubWindows
         private void Login_Click(object sender, RoutedEventArgs e)
         {
             options.password = Passw.Password;
-            options.path = File.ReadAllText(openFileDialog.FileName);
+            options.path = openFileDialog.FileName;
             mainWindow = new MainWindow(options);
             Window.Close();
             mainWindow.Show();
+            
+
+
+
             /*if (fileOpeneble)
             {
                 if (Passw.Password!="")

@@ -8,24 +8,21 @@ namespace e_Note
 {
     public class Jegyzet
     {
+        public string Típus; //táblázat-alap-felsorolás
         public string Cim;
         public string Tartalom;
         public string[] Címkék;
 
-        private string Cimketömb;
+        public const string adatokelválasztó = "ZgjGBluXS5bQlKPDGyAa";
+        public const string címkékelválasztó = "zegShZXeBAxXtoEGTa7P";
+        public const string jegyzetelválasztó = "hVNM8wwutyDL9479NRbP";
 
-        public Jegyzet(string sor)
+        public Jegyzet(string típus,string cím,string tartalom,string[] címkék)
         {
-            string[] adatok = sor.Split(new string[] { "ZgjGBluXS5bQlKPDGyAa" }, StringSplitOptions.None);
-            Cim = adatok[0];
-            Tartalom = adatok[1];
-            Cimketömb = adatok[2];
-            Címkék = Cimketömb.Split(new string[] { "zegShZXeBAxXtoEGTa7P" }, StringSplitOptions.None);
-        }
-
-        public Jegyzet()
-        {
-
+            Típus = típus;
+            Cim = cím;
+            Tartalom = tartalom;
+            Címkék = címkék;
         }
     }
 }
