@@ -25,7 +25,6 @@ namespace e_Note.SubWindows
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public MainWindow mainWindow;
         Options options = new Options();
         string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
         OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -33,11 +32,9 @@ namespace e_Note.SubWindows
         public LoginWindow()
         {
             InitializeComponent();
-            //this.Window.WindowStyle = WindowStyle.None;
             this.Window.ResizeMode = ResizeMode.NoResize;
             Refresh();
         }
-
         private void Refresh()
         {
             Window.Title = options.language.Content.LoginWindow_Title;
@@ -65,26 +62,17 @@ namespace e_Note.SubWindows
             }
             
         }
-
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-            options.password = Passw.Password;
-            options.path = openFileDialog.FileName;
-            mainWindow = new MainWindow(options);
-            Window.Close();
-            mainWindow.Show();
-            
-
-
-
-            /*if (fileOpeneble)
+            if (fileOpeneble)
             {
                 if (Passw.Password!="")
                 {
                     string loginable = options.crypto.DecryptStringAES(File.ReadAllText(openFileDialog.FileName), Passw.Password);
                     if (loginable != "nope")
                     {
-                        MainWindow mainWindow = new MainWindow(loginable);
+                        options = new Options(Passw.Password, openFileDialog.FileName);
+                        MainWindow mainWindow = new MainWindow(options);
                         Window.Close();
                         mainWindow.Show();
                     }
@@ -105,7 +93,7 @@ namespace e_Note.SubWindows
                 {
                     File.WriteAllText(path.Replace("e-Note.exe","") + "Save.eNoteData", options.crypto.EncryptStringAES("", "password")); //nyelv
                 }
-            }*/
+            }
         }
     }
 }

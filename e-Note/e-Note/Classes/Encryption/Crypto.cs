@@ -28,7 +28,7 @@ namespace e_Note.Classes.Encryption
                 Rijndael = new RijndaelManaged();
                 Rijndael.Key = key.GetBytes(Rijndael.KeySize / 8);
 
-                //encryptor példányosítás a stream transformhoz
+                //encryptor példányosítás a stream átalakításhoz
                 ICryptoTransform encryptor = Rijndael.CreateEncryptor(Rijndael.Key, Rijndael.IV);
 
                 // Memorystream példányosítás
@@ -74,7 +74,7 @@ namespace e_Note.Classes.Encryption
                 using (MemoryStream msDecrypt = new MemoryStream(bytes))
                 {
                     // RijndaelManaged példányosítás
-                    // kulcs és IV használata
+                    // kulcs és IV használatával
                     Rijndael = new RijndaelManaged();
                     Rijndael.Key = key.GetBytes(Rijndael.KeySize / 8);
                     // Az IV kiolvasása a stream-ből
@@ -85,7 +85,7 @@ namespace e_Note.Classes.Encryption
                     {
                         using (StreamReader srDecrypt = new StreamReader(csDecrypt))
 
-                            // a streamből stringbe áthelyezés
+                            //streamből stringbe
                             plaintext = srDecrypt.ReadToEnd(); //itt akad meg ha nem jó a jelszó
                     }
                 }

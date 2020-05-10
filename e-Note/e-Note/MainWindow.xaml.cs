@@ -34,7 +34,6 @@ namespace e_Note
             options = beállítások;
             InitializeComponent();
             Refresh();
-            //Test.Content = eNodeData;
         }
         private void Refresh()
         {
@@ -47,7 +46,6 @@ namespace e_Note
                 SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 210, 105, 30));
             }
         }
-
         private void Search()
         {
             foreach (var jegyzetitem in jegyzetek)
@@ -68,7 +66,6 @@ namespace e_Note
                 }
             }
         }
-        
         private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -96,7 +93,7 @@ namespace e_Note
         }
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Refresh();
+            Search();
         }
         private void Language_Loaded(object sender, RoutedEventArgs e)
         {
@@ -108,19 +105,18 @@ namespace e_Note
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Jegyzet> lista = new List<Jegyzet>();
-            string[] címkék = { "asd", "dsa" };
-            lista.Add(new Jegyzet("sima", "Tesztcímke", "Teszt tartalom", címkék));
-            string újfájl = options.Jegyzettömbstringbe(lista);
-            File.WriteAllText(options.path, options.crypto.EncryptStringAES(újfájl, options.password));
-
-            //options.DarkMode = !options.DarkMode;
-            //Refresh();
+            options.DarkMode = !options.DarkMode;
+            Refresh();
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {
             NoteCreator NoteCreatorWindow = new NoteCreator(options);
             NoteCreatorWindow.Show();
+        }
+
+        private void Window_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Refresh();
         }
     }
 }

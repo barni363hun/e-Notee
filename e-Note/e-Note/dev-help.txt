@@ -2,6 +2,3 @@
 - Classes/Languages/LanguageContent -> felvenni új stringként
 - A külömböző nyelvekem felvenni a hozzájuk tartozó szövegeket
 - Az ablak Refresh() metódusába hozzárendelni az adott objektum kontentjéhez az első pontban felvett Options.Language.Content.xyz
-
-mainwindow-ba létrehozni új public metódusokat
-az egyik jegyzetlistából stringet a másik stringből jegyszetlistát csináljon
