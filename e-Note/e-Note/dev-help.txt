@@ -1,4 +1,5 @@
-﻿új Szöveges felirat felvétele a nyelvekhez:
+új Szöveges felirat felvétele a nyelvekhez:
 - Classes/Languages/LanguageContent -> felvenni új stringként
 - A külömböző nyelvekem felvenni a hozzájuk tartozó szövegeket
 - Az ablak Refresh() metódusába hozzárendelni az adott objektum kontentjéhez az első pontban felvett Options.Language.Content.xyz
+
