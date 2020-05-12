@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\programming\e-Notee\e-Note\e-Note\obj\Debug\
+D:\GitKraken\e-Notee\e-Note\e-Note\obj\Debug\
 e_Note
 none
 false
 DEBUG;TRACE
-D:\programming\e-Notee\e-Note\e-Note\App.xaml
+D:\GitKraken\e-Notee\e-Note\e-Note\App.xaml
 31355114663
 2150179798
 14-599884306
 13-1505183044
 MainWindow.xaml;SubWindows\LoginWindow.xaml;SubWindows\NoteCreator.xaml;
 
-False
+True
 
