@@ -59,13 +59,17 @@ namespace e_Note.Classes
             foreach (var jegyzetsor in egész.Split(new string[] { Jegyzet.jegyzetelválasztó }, StringSplitOptions.None))
             {
                 string[] adatok = jegyzetsor.Split(new string[] { Jegyzet.adatokelválasztó }, StringSplitOptions.None);
-                string Cimketömb = adatok[2];
-                string[] jegyzetcímkék = Cimketömb.Split(new string[] { Jegyzet.címkékelválasztó }, StringSplitOptions.None);
-                Jegyzet jegyzet = new Jegyzet(adatok[3],adatok[0],adatok[1],jegyzetcímkék);
-                /*jegyzet.Cim = adatok[0];
-                jegyzet.Tartalom = adatok[1];
-                jegyzet.Típus = adatok[3];*/
-                jegyzetekek.Add(jegyzet);
+                if (adatok[0]!= "")
+                {
+                    string Cimketömb = adatok[2];
+                    string[] jegyzetcímkék = Cimketömb.Split(new string[] { Jegyzet.címkékelválasztó }, StringSplitOptions.None);
+                    Jegyzet jegyzet = new Jegyzet(adatok[3], adatok[0], adatok[1], jegyzetcímkék);
+                    /*jegyzet.Cim = adatok[0];
+                    jegyzet.Tartalom = adatok[1];
+                    jegyzet.Típus = adatok[3];*/
+                    jegyzetekek.Add(jegyzet);
+                }
+                
             }
             return jegyzetekek;
         }
@@ -79,26 +83,22 @@ namespace e_Note.Classes
                 L_Tartalom.Content = item.Tartalom;
             }*/
             string újfájl = this.Jegyzettömbstringbe(lista);
-            File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl.ToString(), this.password));
+            File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
         }
         public bool JegyzetTörléseAFájlból(Jegyzet törlendő)
         {
             List<Jegyzet> lista = this.Fájlbeolvas();
-            bool sikerültatörlés = false;
             foreach (var jegyzet in lista)
             {
                 if (jegyzet == törlendő)
                 {
                     lista.Remove(törlendő);
-                    sikerültatörlés = true;
+                    string újfájl = this.Jegyzettömbstringbe(lista);
+                    File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
+                    return true;
                 }
             }
-            if (sikerültatörlés)
-            {
-                string újfájl = this.Jegyzettömbstringbe(lista);
-                File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl.ToString(), this.password));
-            }
-            return sikerültatörlés;
+            return false;
         }
     }
 }

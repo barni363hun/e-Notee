@@ -46,6 +46,7 @@ namespace e_Note.SubWindows
             string[] címkék = Címkék.Text.Split(',');
             Jegyzet felvevendő = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
             options.JegyzetHozzáadásAFájlhoz(felvevendő);
+            Close();
         }
     }
 }

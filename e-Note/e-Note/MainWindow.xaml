@@ -34,5 +34,22 @@
                 </Style>
             </Button.Resources>
         </Button>
+
+        <ScrollViewer Height="300" Width="750" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ItemsControl x:Name="JegyzetekMegjelenítése">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="3"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <GroupBox Header="{Binding Cim}" Height="200px">
+                            <TextBlock Text="{Binding Tartalom}"/>
+                        </GroupBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Window>

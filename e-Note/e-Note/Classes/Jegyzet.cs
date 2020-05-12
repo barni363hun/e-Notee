@@ -8,10 +8,10 @@ namespace e_Note
 {
     public class Jegyzet
     {
-        public string Típus; //táblázat-alap-felsorolás
-        public string Cim;
-        public string Tartalom;
-        public string[] Címkék;
+        public string Típus { get; set; } //táblázat-alap-felsorolás
+        public string Cim { get; set; }
+        public string Tartalom { get; set; }
+        public string[] Címkék { get; set; }
 
         public const string adatokelválasztó = "ZgjGBluXS5bQlKPDGyAa";
         public const string címkékelválasztó = "zegShZXeBAxXtoEGTa7P";

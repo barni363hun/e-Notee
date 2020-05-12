@@ -3,6 +3,7 @@ using e_Note.Classes.Leanguages;
 using e_Note.SubWindows;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,12 +28,12 @@ namespace e_Note
         Options options;
         List<Jegyzet> jegyzetek = new List<Jegyzet>();
         List<string> kiírandójegyzetek = new List<string>();
-        List<string> grid = new List<string>();
 
         public MainWindow(Options beállítások)
         {
             options = beállítások;
             InitializeComponent();
+            //options.JegyzetTörléseAFájlból(jegyzetek[0]);
             Refresh();
         }
         private void Refresh()
@@ -45,8 +46,10 @@ namespace e_Note
             {
                 SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 210, 105, 30));
             }
+            jegyzetek = options.Fájlbeolvas();
+            JegyzetekMegjelenítése.ItemsSource = jegyzetek;
         }
-        private void Search()
+        private void UpdateAlignment()
         {
             foreach (var jegyzetitem in jegyzetek)
             {
@@ -65,6 +68,7 @@ namespace e_Note
                     }
                 }
             }
+            Refresh();
         }
         private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
@@ -93,7 +97,7 @@ namespace e_Note
         }
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Search();
+            UpdateAlignment();
         }
         private void Language_Loaded(object sender, RoutedEventArgs e)
         {
@@ -106,6 +110,8 @@ namespace e_Note
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             options.DarkMode = !options.DarkMode;
+            //jegyzetek = options.Fájlbeolvas();
+            //options.JegyzetTörléseAFájlból(jegyzetek[0]);
             Refresh();
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
@@ -113,7 +119,6 @@ namespace e_Note
             NoteCreator NoteCreatorWindow = new NoteCreator(options);
             NoteCreatorWindow.Show();
         }
-
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
             Refresh();
