@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\
 e_Note
 none
 false
 DEBUG;TRACE
 D:\programming\e-Notee\e-Note\e-Note\App.xaml
-4921372855
+5484325625
 2150179798
-1549248738
+16944974356
 13-1505183044
-MainWindow.xaml;SubWindows\GetPasswordWindow.xaml;SubWindows\LoginWindow.xaml;SubWindows\NoteCreator.xaml;
+MainWindow.xaml;SubWindows\GetPasswordWindow.xaml;SubWindows\LoginWindow.xaml;SubWindows\NoteCreator.xaml;SubWindows\NoteEditor.xaml;
 
 False
 

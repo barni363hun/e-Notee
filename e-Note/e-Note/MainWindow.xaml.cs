@@ -47,7 +47,8 @@ namespace e_Note
                 SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 210, 105, 30));
             }
             jegyzetek = options.Fájlbeolvas();
-            JegyzetekMegjelenítése.ItemsSource = jegyzetek;
+            JegyzetekMegjelenítéseGridesen.ItemsSource = jegyzetek;
+            JegyzetekMegjelenítéseListásan.ItemsSource = jegyzetek;
         }
         private void UpdateAlignment()
         {
@@ -122,6 +123,34 @@ namespace e_Note
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
             Refresh();
+        }
+        private void Grid_Selected(object sender, RoutedEventArgs e)
+        {
+            gridnézet.Visibility = Visibility.Visible;
+            listanézet.Visibility = Visibility.Hidden;
+        }
+        private void List_Selected(object sender, RoutedEventArgs e)
+        {
+            gridnézet.Visibility = Visibility.Hidden;
+            listanézet.Visibility = Visibility.Visible;
+        }
+
+        private void jegyzetgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            List<Jegyzet> jegyzets = options.Fájlbeolvas();
+            var jegyzetTextbox = (TextBox)sender;
+            foreach (var item in jegyzets)
+            {
+                if (item.Tartalom == jegyzetTextbox.Text)
+                {
+                    NoteEditor EditNote = new NoteEditor(item);
+                    if (EditNote.ShowDialog() == true)
+                    {
+                        Jegyzet asd = EditNote.ResponseNote;
+                    }
+                }
+            }
+            
         }
     }
 }

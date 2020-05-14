@@ -17,8 +17,8 @@
             <ComboBoxItem Content="HU"/>
         </ComboBox>
         <ComboBox x:Name="View" HorizontalAlignment="Left" Margin="89,23,0,0" VerticalAlignment="Top" Width="100" Height="34" SelectionChanged="View_SelectionChanged" Loaded="View_Loaded" Background="Black">
-            <ComboBoxItem x:Name="Grid" Content="Grid"/>
-            <ComboBoxItem x:Name="List" Content="List"/>
+            <ComboBoxItem x:Name="Grid" Content="Grid" Selected="Grid_Selected"/>
+            <ComboBoxItem x:Name="List" Content="List" Selected="List_Selected"/>
         </ComboBox>
         <Button x:Name="SwitchColor" Content="Color Switch" HorizontalAlignment="Left" Margin="215,23,0,0" VerticalAlignment="Top" Width="83" Height="34" Background="#FFD2521E" BorderBrush="Black" BorderThickness="2" Click="Button_Click">
             <Button.Resources>
@@ -35,8 +35,8 @@
             </Button.Resources>
         </Button>
 
-        <ScrollViewer Height="300" Width="750" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <ItemsControl x:Name="JegyzetekMegjelenítése">
+        <ScrollViewer x:Name="gridnézet" Margin="0,80,-0.4,0">
+            <ItemsControl x:Name="JegyzetekMegjelenítéseGridesen">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="3"/>
@@ -44,8 +44,25 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <GroupBox Header="{Binding Cim}" Height="200px">
-                            <TextBlock Text="{Binding Tartalom}"/>
+                        <GroupBox MaxHeight="250" Header="{Binding Cim}" FontSize="18" Background="#FFFF9624" Foreground="Black" FontWeight="Bold" VerticalAlignment="Stretch" Margin="10" BorderBrush="Black">
+                            <TextBox x:Name="jegyzetgrid" FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="Black" SelectionBrush="#00D35300" BorderThickness="0" Background="#00333337" MouseDoubleClick="jegyzetgrid_MouseDoubleClick"/>
+                        </GroupBox>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <ScrollViewer x:Name="listanézet" Margin="0,80,-0.4,0">
+            <ItemsControl x:Name="JegyzetekMegjelenítéseListásan">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="1"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <GroupBox Header="{Binding Cim}" Height="200px" FontSize="18" Background="#FFFF9624" Foreground="Black" FontWeight="Bold">
+                            <TextBox FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="Black" SelectionBrush="#00D35300" BorderThickness="0" Background="#00333337"/>
                         </GroupBox>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
