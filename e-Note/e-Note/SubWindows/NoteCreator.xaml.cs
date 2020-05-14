@@ -48,5 +48,10 @@ namespace e_Note.SubWindows
             options.JegyzetHozzáadásAFájlhoz(felvevendő);
             Close();
         }
+
+        private void Tartalom_SizeChanged()
+        {
+
+        }
     }
 }
