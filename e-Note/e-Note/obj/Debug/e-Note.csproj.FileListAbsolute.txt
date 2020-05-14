@@ -52,3 +52,5 @@ D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.pdb
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note_Content.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteCreator.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteCreator.baml
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\GetPasswordWindow.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\GetPasswordWindow.baml

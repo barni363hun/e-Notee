@@ -101,7 +101,7 @@ namespace e_Note.SubWindows
                     if (GetPassword.ShowDialog() == true)
                     {
                         File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText)); //nyelv
-                        filejustcreated = true;
+                        
                         Passw.Password = GetPassword.ResponseText;
                         openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
                     }

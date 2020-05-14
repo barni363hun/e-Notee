@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\programming\e-Notee\e-Note\e-Note\App.xaml
-31355114663
+4921372855
 2150179798
-14-599884306
+1549248738
 13-1505183044
-MainWindow.xaml;SubWindows\LoginWindow.xaml;SubWindows\NoteCreator.xaml;
+MainWindow.xaml;SubWindows\GetPasswordWindow.xaml;SubWindows\LoginWindow.xaml;SubWindows\NoteCreator.xaml;
 
 False
 
