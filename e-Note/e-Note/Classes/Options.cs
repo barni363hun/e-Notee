@@ -85,20 +85,31 @@ namespace e_Note.Classes
             string újfájl = this.Jegyzettömbstringbe(lista);
             File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
         }
-        public bool JegyzetTörléseAFájlból(Jegyzet törlendő)
+        public void JegyzetTörléseAFájlból(int törlendőindexe,List<Jegyzet> jegyzets)
         {
-            List<Jegyzet> lista = this.Fájlbeolvas();
-            foreach (var jegyzet in lista)
+            if (törlendőindexe == 0)
             {
-                if (jegyzet == törlendő)
-                {
-                    lista.Remove(törlendő);
-                    string újfájl = this.Jegyzettömbstringbe(lista);
-                    File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
-                    return true;
-                }
+                jegyzets.Clear();
             }
-            return false;
+            else
+            {
+                jegyzets.Remove(jegyzets[törlendőindexe]);
+            }
+            string újfájl = this.Jegyzettömbstringbe(jegyzets);
+            File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
+
+            //List<Jegyzet> lista = this.Fájlbeolvas();
+            //for (int i = 0; i < lista.Count; i++)
+            //{
+            //    if (lista[i].Equals(törlendő))
+            //    {
+            //        return "siker";
+            //        //lista.Remove(jegyzet);
+            //        string újfájl = this.Jegyzettömbstringbe(lista);
+            //        File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
+            //    }
+            //}
+            //return "sikertelen";
         }
     }
 }

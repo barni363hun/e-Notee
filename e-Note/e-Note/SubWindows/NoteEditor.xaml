@@ -43,6 +43,13 @@
                 </Style>
             </Button.Resources>
         </Button>
+        <Button x:Name="DeleteJegyzet" Content="DELETE" HorizontalAlignment="Right" Margin="0,0,19.6,383.4" VerticalAlignment="Bottom" Width="86" FontSize="20" Height="37" BorderBrush="Black" BorderThickness="2" Background="#FFC80000" Click="DeleteJegyzet_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
 
     </Grid>
 </Window>

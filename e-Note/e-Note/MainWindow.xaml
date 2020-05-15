@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" GotFocus="Window_GotFocus">
 
-    <Grid>
+    <Grid x:Name="háttér">
         <Grid.Background>
             <ImageBrush ImageSource="Mainbglight.jpg"/>
         </Grid.Background>
@@ -44,7 +44,7 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <GroupBox MaxHeight="250" Header="{Binding Cim}" FontSize="18" Background="#FFFF9624" Foreground="Black" FontWeight="Bold" VerticalAlignment="Stretch" Margin="10" BorderBrush="Black">
+                        <GroupBox x:Name="JegyzetBox" MaxHeight="250" Header="{Binding Cim}" FontSize="18" Background="#FFFF9624" Foreground="Black" FontWeight="Bold" VerticalAlignment="Stretch" Margin="10" BorderBrush="Black">
                             <TextBox x:Name="jegyzetgrid" FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="Black" SelectionBrush="#00D35300" BorderThickness="0" Background="#00333337" MouseDoubleClick="jegyzetgrid_MouseDoubleClick"/>
                         </GroupBox>
                     </DataTemplate>

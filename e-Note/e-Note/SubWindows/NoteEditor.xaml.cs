@@ -1,4 +1,5 @@
-﻿using System;
+﻿using e_Note.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,16 @@ namespace e_Note.SubWindows
     /// </summary>
     public partial class NoteEditor : Window
     {
+        List<Jegyzet> lista;
+        int jindex;
         Jegyzet jegyzet;
-        public NoteEditor(Jegyzet inputjegyzet)
+        Options options;
+        public NoteEditor(List<Jegyzet> inputjegyzetek,int inputjegyzetindex, Options inputoptions)
         {
-            jegyzet = inputjegyzet;
+            options = inputoptions;
+            jegyzet = inputjegyzetek[inputjegyzetindex];
+            jindex = inputjegyzetindex;
+            lista = inputjegyzetek;
             InitializeComponent();
             Cim.Text = jegyzet.Cim;
             Tartalom.Text = jegyzet.Tartalom;
@@ -34,20 +41,19 @@ namespace e_Note.SubWindows
             címkékek = címkékek.Remove(címkékek.Length - 1);
             Címkék.Text = címkékek;
         }
-        public Jegyzet ResponseNote
-        {
-            get { return jegyzet; }
-            set { jegyzet = setjegyzetdata(); }
-        }
-        
-        private Jegyzet setjegyzetdata()
-        {
-            string[] címkék = Címkék.Text.Split(',');
-            return new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
-        }
         private void Kész_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+                string[] címkék = Címkék.Text.Split(',');
+                Jegyzet újjegyzet = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
+                options.JegyzetTörléseAFájlból(jindex, lista);
+                options.JegyzetHozzáadásAFájlhoz(újjegyzet);
+                Close();
+        }
+
+        private void DeleteJegyzet_Click(object sender, RoutedEventArgs e)
+        {
+            options.JegyzetTörléseAFájlból(jindex, lista);
+            Close();
         }
     }
 }
