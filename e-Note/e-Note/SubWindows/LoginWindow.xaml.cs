@@ -33,7 +33,7 @@ namespace e_Note.SubWindows
         public LoginWindow()
         {
             InitializeComponent();
-            this.Window.ResizeMode = ResizeMode.NoResize;
+            
             Refresh();
         }
         private void Refresh()

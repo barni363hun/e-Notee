@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace e_Note.Classes
 {
@@ -16,6 +17,7 @@ namespace e_Note.Classes
         public bool DarkMode;
         public string password;
         public string path;
+        
         public Options(string jelszo, string elérésiút)
         {
             crypto = new Crypto();

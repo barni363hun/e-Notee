@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,32 +30,53 @@ namespace e_Note
         List<Jegyzet> jegyzetek = new List<Jegyzet>();
         List<Jegyzet> kiírandójegyzetek = new List<Jegyzet>();
         private List<ImageBrush> kép;
+       
 
         public MainWindow(Options beállítások)
         {
             options = beállítások;
             InitializeComponent();
             kép = new List<ImageBrush>();
-            ImageBrush myimage1 = new ImageBrush(new BitmapImage(new Uri(@"D:\programming\e-Notee\e-Note\e-Note\Assets\Mainbglight.jpg")));
-            ImageBrush myimage2 = new ImageBrush(new BitmapImage(new Uri(@"D:\programming\e-Notee\e-Note\e-Note\Assets\Mainbgdark.jpg")));
+            ImageBrush myimage1 = new ImageBrush(new BitmapImage(new Uri("Assets/Mainbglight.jpg", UriKind.Relative)));
+            ImageBrush myimage2 = new ImageBrush(new BitmapImage(new Uri("Assets/Mainbgdark.jpg", UriKind.Relative)));
             kép.Add(myimage1);
             kép.Add(myimage2);
             jegyzetek = options.Fájlbeolvas();
             Refresh();
         }
+        
         private void Refresh()
         {
             if (options.DarkMode)
             {
+
+                
                 //dark mode
-                SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 128, 0, 0));
+                SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
+                SwitchColor.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+                SwitchColor.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 háttér.Background = kép[1];
+                foreach (var item in jegyzetek)
+                {
+                    item.bgcolor = "#FF262626";
+                    item.fgcolor = "#FFFFFFFF";
+                    
+                }
+                
             }
             else
             {
                 //light mode
-                SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 210, 105, 30));
+                SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 255, 143, 45));
+                SwitchColor.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+                SwitchColor.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 háttér.Background = kép[0];
+                foreach (var item in jegyzetek)
+                {
+                    item.bgcolor = "#FFFF9624";
+                    item.fgcolor = "#FF000000";
+                   
+                }
             }
             JegyzetekMegjelenítéseGridesen.ItemsSource = new List<Jegyzet>();
             JegyzetekMegjelenítéseListásan.ItemsSource = new List<Jegyzet>();
@@ -114,13 +136,18 @@ namespace e_Note
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
+            
+            
             options.DarkMode = !options.DarkMode;
             Refresh();
+
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {
-            NoteCreator NoteCreatorWindow = new NoteCreator(options);
-            NoteCreatorWindow.Show();
+            
+            AddWindow addwindow = new AddWindow();
+            addwindow.Show();
         }
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {

@@ -55,6 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddnewTable.xaml.cs">
+      <DependentUpon>AddnewTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Addtable.xaml.cs">
+      <DependentUpon>Addtable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddWindow.xaml.cs">
+      <DependentUpon>AddWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Encryption\Crypto.cs" />
     <Compile Include="Classes\Languages\English.cs" />
     <Compile Include="Classes\Languages\Hungarian.cs" />
@@ -74,6 +83,18 @@
     <Compile Include="SubWindows\NoteEditor.xaml.cs">
       <DependentUpon>NoteEditor.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddnewTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addtable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

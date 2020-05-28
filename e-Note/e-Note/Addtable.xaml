@@ -1,0 +1,21 @@
+﻿<Window x:Class="e_Note.Addtable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:e_Note"
+        mc:Ignorable="d"
+        Title="Addtable" Height="450" Width="600">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/e-Note;component/Assets/bgphoto.png"/>
+        </Grid.Background>
+        <Label Content="Új táblázat" FontSize="40" Height="70" HorizontalAlignment="Center" Margin="147,29,146.6,0" Width="300" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <Label Content="Oszlopok száma:" FontSize="22" HorizontalAlignment="Left" Margin="69,169,0,0" VerticalAlignment="Top" Height="45"/>
+        <TextBox x:Name="Oszlopok" BorderBrush="Black" HorizontalAlignment="Left" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="45" Margin="301,169,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="98"/>
+        <Label Content="Sorok száma:" FontSize="22" HorizontalAlignment="Left" Margin="69,251,0,0" VerticalAlignment="Top" Height="45"/>
+        <TextBox x:Name="Sorok" BorderBrush="Black" HorizontalAlignment="Left" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="45" Margin="301,251,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="98"/>
+        <Button Content="Létrehozás" HorizontalAlignment="Center" FontSize="24" Margin="19,325,0,0" VerticalAlignment="Top" Width="200" Height="85" Click="Button_Click"/>
+
+    </Grid>
+</Window>

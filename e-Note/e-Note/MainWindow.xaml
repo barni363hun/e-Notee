@@ -20,7 +20,7 @@
             <ComboBoxItem x:Name="Grid" Content="Grid" Selected="Grid_Selected"/>
             <ComboBoxItem x:Name="List" Content="List" Selected="List_Selected"/>
         </ComboBox>
-        <Button x:Name="SwitchColor" Content="Color Switch" HorizontalAlignment="Left" Margin="215,23,0,0" VerticalAlignment="Top" Width="83" Height="34" Background="#FFD2521E" BorderBrush="Black" BorderThickness="2" Click="Button_Click">
+        <Button x:Name="SwitchColor" Content="Color Switch" HorizontalAlignment="Left" Margin="215,23,0,0" VerticalAlignment="Top" Width="83" Height="34" Background="#FFFF8F2D" BorderBrush="Black" BorderThickness="2" Click="Button_Click" Foreground="Black">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5"/>
@@ -42,10 +42,10 @@
                         <UniformGrid Columns="3"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
+                <ItemsControl.ItemTemplate  >
                     <DataTemplate>
-                        <GroupBox x:Name="JegyzetBox" MaxHeight="250" Header="{Binding Cim}" FontSize="18" Background="#FFFF9624" Foreground="Black" FontWeight="Bold" VerticalAlignment="Stretch" Margin="10" BorderBrush="Black">
-                            <TextBox x:Name="jegyzetgrid" FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="Black" SelectionBrush="#00D35300" BorderThickness="0" Background="#00333337" MouseDoubleClick="jegyzetgrid_MouseDoubleClick"/>
+                        <GroupBox x:Name="JegyzetBox" MaxHeight="250" Header="{Binding Cim}" FontSize="18" Background="{Binding bgcolor}" Foreground="{Binding fgcolor}" FontWeight="Bold" VerticalAlignment="Stretch" Margin="10" BorderBrush="Black">
+                            <TextBox x:Name="jegyzetgrid" FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="{Binding fgcolor}" SelectionBrush="#00D35300" BorderThickness="0" Background="{Binding bgcolor}" MouseDoubleClick="jegyzetgrid_MouseDoubleClick"/>
                         </GroupBox>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -61,8 +61,8 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <GroupBox Header="{Binding Cim}" Height="200px" FontSize="18" Background="#FFFF9624" Foreground="Black" FontWeight="Bold">
-                            <TextBox FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="Black" SelectionBrush="#00D35300" BorderThickness="0" Background="#00333337"/>
+                        <GroupBox Header="{Binding Cim}" Height="200px" FontSize="18" Background="{Binding bgcolor}" Foreground="{Binding fgcolor}" FontWeight="Bold">
+                            <TextBox FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="{Binding fgcolor}" SelectionBrush="#00D35300" BorderThickness="0" Background="{Binding bgcolor}"/>
                         </GroupBox>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

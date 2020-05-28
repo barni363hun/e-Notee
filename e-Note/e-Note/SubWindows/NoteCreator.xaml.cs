@@ -49,9 +49,6 @@ namespace e_Note.SubWindows
             Close();
         }
 
-        private void Tartalom_SizeChanged()
-        {
-
-        }
+        
     }
 }
