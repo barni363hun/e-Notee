@@ -8,7 +8,7 @@
         Title="AddWindow" Height="350" Width="600">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/e-Note;component/Assets/bgphoto.png"/>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/bgphoto.png"/>
         </Grid.Background>
         <Button Content="Új felsorolást" BorderBrush="Black" BorderThickness="2" FontSize="24" HorizontalAlignment="Center" Margin="100,246,100,17" VerticalAlignment="Bottom" Height="50" Width="300" />
         <Button Content="Új táblázatot" BorderBrush="Black" BorderThickness="2" FontSize="24" HorizontalAlignment="Center" Margin="100,70,100,0" VerticalAlignment="Center" Height="50" Width="300" Click="table_Click"/>

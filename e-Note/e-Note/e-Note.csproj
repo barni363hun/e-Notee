@@ -55,13 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddnewTable.xaml.cs">
+    <Compile Include="SubWindows\AddnewTable.xaml.cs">
       <DependentUpon>AddnewTable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Addtable.xaml.cs">
+    <Compile Include="SubWindows\Addtable.xaml.cs">
       <DependentUpon>Addtable.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddWindow.xaml.cs">
+    <Compile Include="SubWindows\AddWindow.xaml.cs">
       <DependentUpon>AddWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Encryption\Crypto.cs" />
@@ -83,15 +83,15 @@
     <Compile Include="SubWindows\NoteEditor.xaml.cs">
       <DependentUpon>NoteEditor.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddnewTable.xaml">
+    <Page Include="SubWindows\AddnewTable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Addtable.xaml">
+    <Page Include="SubWindows\Addtable.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddWindow.xaml">
+    <Page Include="SubWindows\AddWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,11 +157,7 @@
   <ItemGroup>
     <Resource Include="Assets\orange-lights.jpg" />
     <Resource Include="Assets\Mainbgdark.jpg" />
-    <Content Include="Assets\Background.wmv" />
-    <Content Include="Assets\Background.mp4" />
-    <Resource Include="Mainbglight.jpg" />
     <Resource Include="Assets\Mainbglight.jpg" />
-    <Resource Include="SubWindows\bgphoto.png" />
     <Resource Include="Assets\bgphoto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

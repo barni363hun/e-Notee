@@ -49,7 +49,6 @@ D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.GenerateResource.c
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.csproj.CoreCompileInputs.cache
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.exe
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note.pdb
-D:\programming\e-Notee\e-Note\e-Note\obj\Debug\e-Note_Content.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteCreator.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteCreator.baml
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\GetPasswordWindow.g.cs
@@ -69,3 +68,9 @@ D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\AddnewTable.g.cs
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\Addtable.g.cs
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\AddnewTable.baml
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\Addtable.baml
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.g.cs
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.baml
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.baml
+D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.baml

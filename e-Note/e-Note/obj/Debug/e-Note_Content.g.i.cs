@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/background.wmv")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("assets/background.mp4")]
 
 

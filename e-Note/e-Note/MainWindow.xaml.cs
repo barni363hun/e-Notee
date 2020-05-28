@@ -37,8 +37,8 @@ namespace e_Note
             options = beállítások;
             InitializeComponent();
             kép = new List<ImageBrush>();
-            ImageBrush myimage1 = new ImageBrush(new BitmapImage(new Uri("Assets/Mainbglight.jpg", UriKind.Relative)));
-            ImageBrush myimage2 = new ImageBrush(new BitmapImage(new Uri("Assets/Mainbgdark.jpg", UriKind.Relative)));
+            ImageBrush myimage1 = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Assets/Mainbglight.jpg", UriKind.Absolute)));
+            ImageBrush myimage2 = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Assets/Mainbgdark.jpg", UriKind.Absolute)));
             kép.Add(myimage1);
             kép.Add(myimage2);
             jegyzetek = options.Fájlbeolvas();
