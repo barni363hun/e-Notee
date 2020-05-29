@@ -154,6 +154,7 @@ namespace e_Note
         }
         private void Window_GotFocus(object sender, RoutedEventArgs e)
         {
+            jegyzetek = options.Fájlbeolvas();
             Refresh();
         }
         private void Grid_Selected(object sender, RoutedEventArgs e)
@@ -168,7 +169,7 @@ namespace e_Note
         }
         private void jegyzetgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            List<Jegyzet> jegyzets = options.Fájlbeolvas();
+            List<Jegyzet> jegyzets = options.Fájlbeolvas(); //nem olyan jó de tartalom alapján nyitja meg az editort
             TextBox jegyzetTextbox = (TextBox)sender;
             for (int i = 0; i < jegyzets.Count; i++)
             {
@@ -196,6 +197,11 @@ namespace e_Note
         {
             options.language.ChoseType(((ComboBoxItem)Language.SelectedItem).Content.ToString());
             Refresh();
+        }
+
+        private void info_Click(object sender, RoutedEventArgs e)
+        {
+            //információk megjelenítése pl arról hogy máshol az f1-et használják erre
         }
     }
 }

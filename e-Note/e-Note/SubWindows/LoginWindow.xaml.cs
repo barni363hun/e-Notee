@@ -76,7 +76,7 @@ namespace e_Note.SubWindows
                         options = new Options(Passw.Password, openFileDialog.FileName);
                         if (filejustcreated)
                         {
-                            Jegyzet example = new Jegyzet("sima", "példa jegyzet címe", "példa jegyzet tartalma", new string[] { "példacímke1", "példacímke2" });//nyelv
+                            Jegyzet example = new Jegyzet("sima", "Hello World!", "Ha bármilyen segítségre lenne szükséged nyomd meg az f1-gombot", new string[] { "" });//nyelv
                             options.JegyzetHozzáadásAFájlhoz(example);
                         }
                         MainWindow mainWindow = new MainWindow(options);
@@ -113,7 +113,7 @@ namespace e_Note.SubWindows
             {
                 if (Choser.SelectedItem == EN)
                 {
-                    MessageBoxResult result = MessageBox.Show("Forgot to open your eNoteData file? If you push no I will generate one next to myself. If it is already generated next to me in a file, I will overwrite it.", "Do you fordot it?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
+                    MessageBoxResult result = MessageBox.Show("Forgot to open your eNoteData file? If you push 'Nem' I will generate one next to myself. If it is already generated next to me in a file, I will overwrite it.", "Do you fordot it?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
                     if (result == MessageBoxResult.No)
                     {
                         GetPasswordWindow GetPassword = new GetPasswordWindow(options);
