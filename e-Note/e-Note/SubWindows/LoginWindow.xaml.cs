@@ -41,6 +41,7 @@ namespace e_Note.SubWindows
             Window.Title = options.language.Content.LoginWindow_Title;
             Input.Content = options.language.Content.LoginWindow_Input;
             Login.Content = options.language.Content.LoginWindow_LoginButton;
+            OpenFile.Content = options.language.Content.LoginWindow_OpenFile;
         }
         private void Choser_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -84,28 +85,63 @@ namespace e_Note.SubWindows
                     }
                     else
                     {
-                        MessageBox.Show("Rossz jelszót adtál meg!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                        if (Choser.SelectedItem==EN)
+                        {
+                            MessageBox.Show("Wrong password!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                        }
+                        else
+                        {
+                            MessageBox.Show("Rossz jelszót adtál meg!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                        }
+                        
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Nem adtál meg jelszót!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                    if (Choser.SelectedItem==EN)
+                    {
+                        MessageBox.Show("You have not entered a password!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nem adtál meg jelszót!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                    }
+                    
                 }
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Elfelejtetted megnyitni az eNoteData fájlodat? Ha nem-re nyomsz generálok egyet magam mellé. Ha van már mellém generálva fájl akkor felülírom azt.", "Elfelejtetted?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
-                if (result == MessageBoxResult.No)
+                if (Choser.SelectedItem == EN)
                 {
-                    GetPasswordWindow GetPassword = new GetPasswordWindow();
-                    if (GetPassword.ShowDialog() == true)
+                    MessageBoxResult result = MessageBox.Show("Forgot to open your eNoteData file? If you push no I will generate one next to myself. If it is already generated next to me in a file, I will overwrite it.", "Do you fordot it?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
+                    if (result == MessageBoxResult.No)
                     {
-                        File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText)); //nyelv
-                        filejustcreated = true;
-                        Passw.Password = GetPassword.ResponseText;
-                        openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                        GetPasswordWindow GetPassword = new GetPasswordWindow(options);
+                        if (GetPassword.ShowDialog() == true)
+                        {
+                            File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText)); //nyelv
+                            filejustcreated = true;
+                            Passw.Password = GetPassword.ResponseText;
+                            openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                        }
                     }
                 }
+                else
+                {
+                    MessageBoxResult result = MessageBox.Show("Elfelejtetted megnyitni az eNoteData fájlodat? Ha nem-re nyomsz generálok egyet magam mellé. Ha van már mellém generálva fájl akkor felülírom azt.", "Elfelejtetted?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
+                    if (result == MessageBoxResult.No)
+                    {
+                        GetPasswordWindow GetPassword = new GetPasswordWindow(options);
+                        if (GetPassword.ShowDialog() == true)
+                        {
+                            File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText)); //nyelv
+                            filejustcreated = true;
+                            Passw.Password = GetPassword.ResponseText;
+                            openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                        }
+                    }
+                }
+                
             }
         }
     }

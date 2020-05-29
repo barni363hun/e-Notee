@@ -15,6 +15,7 @@ namespace e_Note.Classes.Leanguages
         Hungarian hun;
         public string name { get; private set; }
         public string mark { get; private set; }
+        public string file { get; private set; }
 
         public LanguageContent Content { get; private set; }
 

@@ -47,11 +47,13 @@ namespace e_Note
         
         private void Refresh()
         {
+            Main.Title = options.language.Content.MainWindow_Title;
             if (options.DarkMode)
             {
 
-                
+
                 //dark mode
+                SwitchColor.Content = options.language.Content.MainWindow_Colorlight;
                 SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 SwitchColor.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 SwitchColor.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
@@ -67,6 +69,7 @@ namespace e_Note
             else
             {
                 //light mode
+                SwitchColor.Content = options.language.Content.MainWindow_Colordark;
                 SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 255, 143, 45));
                 SwitchColor.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 SwitchColor.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
@@ -123,7 +126,7 @@ namespace e_Note
             Refresh();
         }
         private void View_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        { 
             Refresh();
         }
         private void Language_Loaded(object sender, RoutedEventArgs e)
@@ -146,7 +149,7 @@ namespace e_Note
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {
             
-            AddWindow addwindow = new AddWindow();
+            AddWindow addwindow = new AddWindow(options);
             addwindow.Show();
         }
         private void Window_GotFocus(object sender, RoutedEventArgs e)
@@ -187,6 +190,12 @@ namespace e_Note
             {
                 SwitchColor.Content = "asd";
             }
+        }
+
+        private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            options.language.ChoseType(((ComboBoxItem)Language.SelectedItem).Content.ToString());
+            Refresh();
         }
     }
 }

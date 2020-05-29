@@ -58,19 +58,18 @@ D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteEditor.baml
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\GetPasswordWindow.g.cs
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteCreator.g.cs
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteEditor.g.cs
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\e-Note_Content.g.cs
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\GetPasswordWindow.baml
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteCreator.baml
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NoteEditor.baml
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\AddWindow.g.cs
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\AddWindow.baml
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\AddnewTable.g.cs
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\Addtable.g.cs
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\AddnewTable.baml
-D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\Addtable.baml
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.g.cs
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.baml
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.baml
 D:\programming\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.baml
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.baml
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.baml
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.baml

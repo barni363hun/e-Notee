@@ -1,4 +1,5 @@
-﻿using System;
+﻿using e_Note.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,18 @@ namespace e_Note.SubWindows
     /// </summary>
     public partial class GetPasswordWindow : Window
     {
-        public GetPasswordWindow()
+        Options options;
+        public GetPasswordWindow(Options opt)
         {
+            options = opt;
             InitializeComponent();
+            Refresh();
+        }
+        private void Refresh()
+        {
+           Window.Title = options.language.Content.GetPasswordWindow_Title;
+            Szoveg.Text = options.language.Content.GetPasswordWindow_Szoveg;
+            Newfile.Content = options.language.Content.GetPasswordWindow_File;
         }
         public string ResponseText
         {

@@ -19,6 +19,7 @@ namespace e_Note
 
         public int oszlopszám { get; set; }
         public int sorokszáma { get; set; }
+       
         
 
         public const string adatokelválasztó = "ZgjGBluXS5bQlKPDGyAa";
