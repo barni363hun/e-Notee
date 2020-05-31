@@ -86,20 +86,26 @@ namespace e_Note
             JegyzetekMegjelenítéseGridesen.ItemsSource = jegyzetek;
             JegyzetekMegjelenítéseListásan.ItemsSource = jegyzetek;
         }
+
+        
+
         private bool EgyezésKereséseAjegyzetben(Jegyzet jegyzet,string kifejezés)
         {
-            if (jegyzet.Cim.Contains(kifejezés) || jegyzet.Tartalom.Contains(kifejezés) || jegyzet.Típus.Contains(kifejezés))
-            {
-                return true;
-            }
-            foreach (var item in jegyzet.Címkék)
-            {
-                if (item.Contains(kifejezés))
+            
+                if (jegyzet.Cim.Contains(kifejezés) || jegyzet.Tartalom.Contains(kifejezés) || jegyzet.Típus.Contains(kifejezés))
                 {
                     return true;
                 }
-            }
-            return false;
+                foreach (var item in jegyzet.Címkék)
+                {
+                    if (item.Contains(kifejezés))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            
+            
         }
         private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
@@ -108,15 +114,89 @@ namespace e_Note
                 List<Jegyzet> összesjegyzet = options.Fájlbeolvas();
                 if (Kereso.Text != "")
                 {
-                    kiírandójegyzetek.Clear();
-                    foreach (Jegyzet jegyzetitem in összesjegyzet)
+                    if (Kereso.Text.Contains("->"))
                     {
-                        if (EgyezésKereséseAjegyzetben(jegyzetitem,Kereso.Text))
+                        string[] keresősor = Kereso.Text.Split(new[] { "->" }, StringSplitOptions.None);
+                        string parancs = keresősor[0];
+                        string minekaparancsa = keresősor[1];
+                        if (parancs == "mode")
                         {
-                            kiírandójegyzetek.Add(jegyzetitem);
+                            if (minekaparancsa == "light")
+                            {
+                                options.DarkMode = false;
+                            }
+                            if (minekaparancsa == "dark")
+                            {
+                                options.DarkMode = true;
+                            }
                         }
+                        if (parancs == "view")
+                        {
+                            if (minekaparancsa == "list")
+                            {
+                                View.SelectedItem = List;
+                            }
+                            if (minekaparancsa == "grid")
+                            {
+                                View.SelectedItem = Grid;
+                            }
+                        }
+                        if (parancs == "language")
+                        {
+                            if (minekaparancsa == "EN")
+                            {
+                                Language.SelectedItem = EN;
+                            }
+                            if (minekaparancsa == "HU")
+                            {
+                                Language.SelectedItem = HU;
+                            }
+                        }
+                        if (parancs == "open")
+                        {
+                            List<Jegyzet> jegyzets = options.Fájlbeolvas(); //nem olyan jó de tartalom alapján nyitja meg az editort
+                            
+                            for (int i = 0; i < jegyzets.Count; i++)
+                            {
+                                if (jegyzets[i].Cim.Contains(minekaparancsa) || jegyzets[i].Tartalom.Contains(minekaparancsa) || jegyzets[i].Típus.Contains(minekaparancsa))
+                                {
+                                    NoteEditor EditNote = new NoteEditor(jegyzets, i, options);
+                                    EditNote.Show();
+                                }
+                            }
+                        }
+                        if (parancs == "new")
+                        {
+                            if (minekaparancsa == "note")
+                            {
+                                NoteCreator NoteCreatorWindow = new NoteCreator(options);
+                                NoteCreatorWindow.Show();
+                            }
+                            if (minekaparancsa == "table")
+                            {
+                                Addtable addtable = new Addtable(options);
+                                addtable.Show();
+                            }
+                        }
+
                     }
-                    jegyzetek = kiírandójegyzetek;
+                    else
+                    {
+                        kiírandójegyzetek.Clear();
+                        foreach (Jegyzet jegyzetitem in összesjegyzet)
+                        {
+
+
+                            if (EgyezésKereséseAjegyzetben(jegyzetitem, Kereso.Text))
+                            {
+                                kiírandójegyzetek.Add(jegyzetitem);
+                            }
+
+
+                        }
+                        jegyzetek = kiírandójegyzetek;
+                    }
+                    
                 }
                 else
                 {
