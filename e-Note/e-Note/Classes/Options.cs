@@ -26,7 +26,8 @@ namespace e_Note.Classes
             password = jelszo;
             path = elérésiút;
         }
-        public Options()
+        
+        public Options() //loginwindownál szükséges félig létrehozni ha nincs még fájl
         {
             crypto = new Crypto();
             language = new ChosenLanguge();
@@ -66,9 +67,6 @@ namespace e_Note.Classes
                     string Cimketömb = adatok[2];
                     string[] jegyzetcímkék = Cimketömb.Split(new string[] { Jegyzet.címkékelválasztó }, StringSplitOptions.None);
                     Jegyzet jegyzet = new Jegyzet(adatok[3], adatok[0], adatok[1], jegyzetcímkék);
-                    /*jegyzet.Cim = adatok[0];
-                    jegyzet.Tartalom = adatok[1];
-                    jegyzet.Típus = adatok[3];*/
                     jegyzetekek.Add(jegyzet);
                 }
                 
@@ -79,11 +77,6 @@ namespace e_Note.Classes
         {
             List<Jegyzet> lista = this.Fájlbeolvas();
             lista.Add(hozzáadandó);
-            /*foreach (var item in lista)
-            {
-                L_Cím.Content = item.Cim;
-                L_Tartalom.Content = item.Tartalom;
-            }*/
             string újfájl = this.Jegyzettömbstringbe(lista);
             File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
         }
@@ -99,19 +92,23 @@ namespace e_Note.Classes
             }
             string újfájl = this.Jegyzettömbstringbe(jegyzets);
             File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
+        }
+        public string[] splitbycommas(string inputstring)
+        {
+            List<string> goodWords = new List<string>();
 
-            //List<Jegyzet> lista = this.Fájlbeolvas();
-            //for (int i = 0; i < lista.Count; i++)
-            //{
-            //    if (lista[i].Equals(törlendő))
-            //    {
-            //        return "siker";
-            //        //lista.Remove(jegyzet);
-            //        string újfájl = this.Jegyzettömbstringbe(lista);
-            //        File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
-            //    }
-            //}
-            //return "sikertelen";
+            if (inputstring != "")
+            {
+                string[] words = inputstring.Split(',');
+                foreach (var item in words)
+                {
+                    if (item != "")
+                    {
+                        goodWords.Add(item);
+                    }
+                }
+            }
+            return goodWords.ToArray();
         }
     }
 }

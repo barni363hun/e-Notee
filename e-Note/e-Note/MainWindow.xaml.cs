@@ -50,8 +50,6 @@ namespace e_Note
             Main.Title = options.language.Content.MainWindow_Title;
             if (options.DarkMode)
             {
-
-
                 //dark mode
                 SwitchColor.Content = options.language.Content.MainWindow_Colorlight;
                 SwitchColor.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
@@ -92,20 +90,18 @@ namespace e_Note
         private bool EgyezésKereséseAjegyzetben(Jegyzet jegyzet,string kifejezés)
         {
             
-                if (jegyzet.Cim.Contains(kifejezés) || jegyzet.Tartalom.Contains(kifejezés) || jegyzet.Típus.Contains(kifejezés))
+            if (jegyzet.Cim.Contains(kifejezés) || jegyzet.Tartalom.Contains(kifejezés) || jegyzet.Típus.Contains(kifejezés))
+            {
+                return true;
+            }
+            foreach (var item in jegyzet.Címkék)
+            {
+                if (item.Contains(kifejezés))
                 {
                     return true;
                 }
-                foreach (var item in jegyzet.Címkék)
-                {
-                    if (item.Contains(kifejezés))
-                    {
-                        return true;
-                    }
-                }
-                return false;
-            
-            
+            }
+            return false;
         }
         private void Kereso_KeyDown(object sender, KeyEventArgs e)
         {
@@ -185,14 +181,10 @@ namespace e_Note
                         kiírandójegyzetek.Clear();
                         foreach (Jegyzet jegyzetitem in összesjegyzet)
                         {
-
-
                             if (EgyezésKereséseAjegyzetben(jegyzetitem, Kereso.Text))
                             {
                                 kiírandójegyzetek.Add(jegyzetitem);
                             }
-
-
                         }
                         jegyzetek = kiírandójegyzetek;
                     }
@@ -219,16 +211,11 @@ namespace e_Note
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-            
             options.DarkMode = !options.DarkMode;
             Refresh();
-
         }
         private void AddNote_Click(object sender, RoutedEventArgs e)
         {
-            
             AddWindow addwindow = new AddWindow(options);
             addwindow.Show();
         }
@@ -247,7 +234,7 @@ namespace e_Note
             gridnézet.Visibility = Visibility.Hidden;
             listanézet.Visibility = Visibility.Visible;
         }
-        private void jegyzetgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        public void jegyzetgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             List<Jegyzet> jegyzets = options.Fájlbeolvas(); //nem olyan jó de tartalom alapján nyitja meg az editort
             TextBox jegyzetTextbox = (TextBox)sender;
@@ -260,19 +247,6 @@ namespace e_Note
                 }
             }
         }
-        
-        private void trigger() //tesztelésre
-        {
-            if (SwitchColor.Content.ToString() == "asd")
-            {
-                SwitchColor.Content = "dsa";
-            }
-            else
-            {
-                SwitchColor.Content = "asd";
-            }
-        }
-
         private void Language_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             options.language.ChoseType(((ComboBoxItem)Language.SelectedItem).Content.ToString());
@@ -281,7 +255,15 @@ namespace e_Note
 
         private void info_Click(object sender, RoutedEventArgs e)
         {
-            //információk megjelenítése pl arról hogy máshol az f1-et használják erre
+            MessageBox.Show(options.language.Content.MainWindow_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                MessageBox.Show(options.language.Content.MainWindow_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

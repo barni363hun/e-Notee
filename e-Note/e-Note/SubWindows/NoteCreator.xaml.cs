@@ -33,19 +33,6 @@ namespace e_Note.SubWindows
             ImageBrush myimage2 = new ImageBrush(new BitmapImage(new Uri("pack://application:,,,/Assets/Mainbgdark.jpg", UriKind.Absolute)));
             kép.Add(myimage1);
             kép.Add(myimage2);
-            //List<Jegyzet> testt = options.Fájlbeolvas();   //a legutolsó jegyzet adatainak kiiratása
-            //if (testt.Count>0)
-            //{
-            //    foreach (var item in testt)
-            //    {
-            //        L_Cím.Content = item.Cim;
-            //        foreach (var cimke in item.Címkék)
-            //        {
-            //            L_Címkék.Content += cimke;
-            //        }
-            //        L_Tartalom.Content = item.Tartalom;
-            //    }
-            //}
             Refresh();
         }
 
@@ -59,11 +46,7 @@ namespace e_Note.SubWindows
 
             if (options.DarkMode)
             {
-
-
                 //dark mode
-
-                
                 Kész.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 Kész.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 Kész.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
@@ -75,8 +58,6 @@ namespace e_Note.SubWindows
             else
             {
                 //light mode
-
-               
                 Kész.Background = new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
                 Kész.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 Kész.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
@@ -89,12 +70,18 @@ namespace e_Note.SubWindows
 
         private void Kész_Click(object sender, RoutedEventArgs e)
         {
-            string[] címkék = Címkék.Text.Split(',');
+            string[] címkék = options.splitbycommas(Címkék.Text);
             Jegyzet felvevendő = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
             options.JegyzetHozzáadásAFájlhoz(felvevendő);
             Close();
         }
 
-        
+        private void Notecreator_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                MessageBox.Show(options.language.Content.NoteEditor_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
     }
 }

@@ -46,11 +46,7 @@ namespace e_Note
 
             if (options.DarkMode)
             {
-
-
                 //dark mode
-
-
                 Jegyzet.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 Jegyzet.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 Jegyzet.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
@@ -68,8 +64,6 @@ namespace e_Note
             else
             {
                 //light mode
-
-
                 Jegyzet.Background = new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
                 Jegyzet.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 Jegyzet.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
@@ -96,6 +90,14 @@ namespace e_Note
         {
             Addtable addtable = new Addtable(options);
             addtable.Show();
+        }
+
+        private void Addwindow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                MessageBox.Show(options.language.Content.AddWindow_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

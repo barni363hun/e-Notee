@@ -50,11 +50,7 @@ namespace e_Note
 
             if (options.DarkMode)
             {
-
-
                 //dark mode
-
-
                 Létrehozás.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 Létrehozás.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 Létrehozás.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
@@ -67,8 +63,6 @@ namespace e_Note
             else
             {
                 //light mode
-
-
                 Létrehozás.Background = new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
                 Létrehozás.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 Létrehozás.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));

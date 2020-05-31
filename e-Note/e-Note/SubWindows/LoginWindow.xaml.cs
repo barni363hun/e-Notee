@@ -33,7 +33,6 @@ namespace e_Note.SubWindows
         public LoginWindow()
         {
             InitializeComponent();
-            
             Refresh();
         }
         private void Refresh()
@@ -60,9 +59,7 @@ namespace e_Note.SubWindows
             if (openFileDialog.ShowDialog() == true)
             {
                 fileOpeneble = openFileDialog.CheckFileExists;
-                
             }
-            
         }
         private void Login_Click(object sender, RoutedEventArgs e)
         {
@@ -76,7 +73,7 @@ namespace e_Note.SubWindows
                         options = new Options(Passw.Password, openFileDialog.FileName);
                         if (filejustcreated)
                         {
-                            Jegyzet example = new Jegyzet("sima", "Hello World!", "Ha bármilyen segítségre lenne szükséged nyomd meg az f1-gombot", new string[] { "" });//nyelv
+                            Jegyzet example = new Jegyzet("sima", "Hello World!", options.language.Content.LoginWindow_exampleNote, new string[] { "" });
                             options.JegyzetHozzáadásAFájlhoz(example);
                         }
                         MainWindow mainWindow = new MainWindow(options);
@@ -87,11 +84,11 @@ namespace e_Note.SubWindows
                     {
                         if (Choser.SelectedItem==EN)
                         {
-                            MessageBox.Show("Wrong password!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                            MessageBox.Show("Wrong password!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         else
                         {
-                            MessageBox.Show("Rossz jelszót adtál meg!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                            MessageBox.Show("Rossz jelszót adtál meg!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                         
                     }
@@ -100,11 +97,11 @@ namespace e_Note.SubWindows
                 {
                     if (Choser.SelectedItem==EN)
                     {
-                        MessageBox.Show("You have not entered a password!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                        MessageBox.Show("You have not entered a password!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Nem adtál meg jelszót!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error); //nyelv
+                        MessageBox.Show("Nem adtál meg jelszót!", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                     
                 }
@@ -113,35 +110,57 @@ namespace e_Note.SubWindows
             {
                 if (Choser.SelectedItem == EN)
                 {
-                    MessageBoxResult result = MessageBox.Show("Forgot to open your eNoteData file? If you push 'Nem' I will generate one next to myself. If it is already generated next to me in a file, I will overwrite it.", "Do you fordot it?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
+                    MessageBoxResult result = MessageBox.Show("Forgot to open your eNoteData file? If you push 'No' I will generate one next to myself. If it is already generated next to me, you cant generate one!", "Did you forget it?", MessageBoxButton.YesNo, MessageBoxImage.Information);
                     if (result == MessageBoxResult.No)
                     {
-                        GetPasswordWindow GetPassword = new GetPasswordWindow(options);
-                        if (GetPassword.ShowDialog() == true)
+                        if (!File.Exists(path.Replace("e-Note.exe", "") + "Save.eNoteData"))
                         {
-                            File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText)); //nyelv
-                            filejustcreated = true;
-                            Passw.Password = GetPassword.ResponseText;
-                            openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                            GetPasswordWindow GetPassword = new GetPasswordWindow(options);
+                            if (GetPassword.ShowDialog() == true)
+                            {
+                                File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText));
+                                filejustcreated = true;
+                                Passw.Password = GetPassword.ResponseText;
+                                openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("You cant overwrite an existing save file.","Error",MessageBoxButton.OK,MessageBoxImage.Error);
                         }
                     }
                 }
                 else
                 {
-                    MessageBoxResult result = MessageBox.Show("Elfelejtetted megnyitni az eNoteData fájlodat? Ha nem-re nyomsz generálok egyet magam mellé. Ha van már mellém generálva fájl akkor felülírom azt.", "Elfelejtetted?", MessageBoxButton.YesNo, MessageBoxImage.Information); //nyelv
+                    MessageBoxResult result = MessageBox.Show("Elfelejtetted megnyitni az eNoteData fájlodat? Ha nem-re nyomsz generálok egyet magam mellé. Ha van már mellém generálva fájl akkor nem tudsz újat generálni!", "Elfelejtetted?", MessageBoxButton.YesNo, MessageBoxImage.Information);
                     if (result == MessageBoxResult.No)
                     {
-                        GetPasswordWindow GetPassword = new GetPasswordWindow(options);
-                        if (GetPassword.ShowDialog() == true)
+                        if (!File.Exists(path.Replace("e-Note.exe", "") + "Save.eNoteData"))
                         {
-                            File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText)); //nyelv
-                            filejustcreated = true;
-                            Passw.Password = GetPassword.ResponseText;
-                            openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                            GetPasswordWindow GetPassword = new GetPasswordWindow(options);
+                            if (GetPassword.ShowDialog() == true)
+                            {
+                                File.WriteAllText(path.Replace("e-Note.exe", "") + "Save.eNoteData", options.crypto.EncryptStringAES("", GetPassword.ResponseText));
+                                filejustcreated = true;
+                                Passw.Password = GetPassword.ResponseText;
+                                openFileDialog.FileName = (path.Replace("e-Note.exe", "") + "Save.eNoteData");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Nem írhatsz felül egy létező mentést", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                 }
                 
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                MessageBox.Show(options.language.Content.LoginWindow_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }

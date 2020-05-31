@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:e_Note"
         mc:Ignorable="d"
-        Title="AddWindow" Height="350" Width="600">
+        Title="AddWindow" Height="350" Width="600" KeyDown="Addwindow_KeyDown">
     <Grid x:Name="háttér">
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Assets/bgphoto.png"/>

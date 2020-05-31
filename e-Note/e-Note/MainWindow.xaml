@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:e_Note"
         mc:Ignorable="d"
-        Title="e-Note" Height="450" Width="800" GotFocus="Window_GotFocus">
+        Title="e-Note" Height="450" Width="800" GotFocus="Window_GotFocus" KeyDown="Main_KeyDown">
 
     <Grid x:Name="háttér">
         <Grid.Background>
@@ -62,8 +62,8 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <GroupBox Header="{Binding Cim}" Height="200px" FontSize="18" Background="{Binding bgcolor}" Foreground="{Binding fgcolor}" FontWeight="Bold">
-                            <TextBox FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="{Binding fgcolor}" SelectionBrush="#00D35300" BorderThickness="0" Background="{Binding bgcolor}"/>
+                        <GroupBox x:Name="JegyzetBox" Header="{Binding Cim}" Height="200px" FontSize="18" Background="{Binding bgcolor}" Foreground="{Binding fgcolor}" FontWeight="Bold">
+                            <TextBox x:Name="jegyzetgrid" FontSize="14" Text="{Binding Tartalom}" FontWeight="Normal" TextWrapping="Wrap" BorderBrush="#00434346" Foreground="{Binding fgcolor}" SelectionBrush="#00D35300" BorderThickness="0" Background="{Binding bgcolor}" MouseDoubleClick="jegyzetgrid_MouseDoubleClick"/>
                         </GroupBox>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

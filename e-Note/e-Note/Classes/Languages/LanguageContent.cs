@@ -44,5 +44,10 @@ namespace e_Note.Classes.Leanguages
         public string AddnewTable_Tartalom;
         public string AddnewTable_Cimke;
         public string AddnewTable_Mentes;
+        public string MainWindow_info;
+        public string LoginWindow_info;
+        public string NoteEditor_info;
+        public string AddWindow_info;
+        public string LoginWindow_exampleNote;
     }
 }

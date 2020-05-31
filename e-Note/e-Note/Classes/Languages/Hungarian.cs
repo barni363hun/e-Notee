@@ -53,6 +53,15 @@ namespace e_Note.Classes.Leanguages
                 AddnewTable_Tartalom = "Táblázat:",
                 AddnewTable_Cimke = "Táblázathoz tartozó cimkék:\n" + "(vesszővel elválasztva)",
                 AddnewTable_Mentes = "Mentés",
+                MainWindow_info = "" +
+                "A keresőmező ből parancsok is indíthatóak: mode->dark/light, language->HU/EN, view->grid/list, open->'keresőszó'(minden találatot megnyit szerkesztésre). " +
+                "A jegyzetre történő dupla kattintássak szerkesztheted a jegyzeteidet. " +
+                "Minden jegyzet automatikusan mentésre kerül. " +
+                "A '+' feliratú gombra kattintásával hozhatsz létre új jegyzetet (még csak sima jegyzet hozható létre).",
+                LoginWindow_info = "A bejelentkezéshez szükséges megnyitnod a mentésfájlodat. Ha még nincsen akkor a bejelentkezés gombra kattintva hozhatsz létre eggyet.",
+                AddWindow_info = "Még csak sima jegyzetet tudsz csinálni.",
+                NoteEditor_info = "A címkékhez vesszővel elválaszva tudsz megadni szavakat amelyekre lehet keresni viszont nem látszódnak.",
+                LoginWindow_exampleNote = "Ha bármilyen segítségre lenne szükséged nyomd meg az f1-gombot"
             };
         }
     }

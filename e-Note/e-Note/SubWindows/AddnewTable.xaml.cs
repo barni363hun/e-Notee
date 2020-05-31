@@ -46,11 +46,7 @@ namespace e_Note
 
             if (options.DarkMode)
             {
-
-
                 //dark mode
-
-
                 Mentés.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 Mentés.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 Mentés.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
@@ -63,8 +59,6 @@ namespace e_Note
             else
             {
                 //light mode
-
-
                 Mentés.Background = new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
                 Mentés.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 Mentés.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));

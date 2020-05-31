@@ -59,17 +59,17 @@ namespace e_Note.SubWindows
             DeleteJegyzet.Content = options.language.Content.Noteeditor_Delete;
             if (options.DarkMode)
             {
-
-
                 //dark mode
-
                 DeleteJegyzet.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 DeleteJegyzet.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 DeleteJegyzet.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+
                 Kész.Background = new SolidColorBrush(Color.FromArgb(255, 38, 38, 38));
                 Kész.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 Kész.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
+
                 háttér.Background = kép[1];
+
                 L_Cím.Foreground = Brushes.White;
                 L_Tartalom.Foreground = Brushes.White;
                 L_Címkék.Foreground = Brushes.White;
@@ -79,14 +79,16 @@ namespace e_Note.SubWindows
             else
             {
                 //light mode
-
                 DeleteJegyzet.Background = new SolidColorBrush(Color.FromArgb(255, 200, 0, 0));
                 DeleteJegyzet.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
                 DeleteJegyzet.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+
                 Kész.Background = new SolidColorBrush(Color.FromArgb(255, 201, 201, 201));
                 Kész.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
                 Kész.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+
                 háttér.Background = kép[0];
+
                 L_Cím.Foreground = Brushes.Black;
                 L_Tartalom.Foreground = Brushes.Black;
                 L_Címkék.Foreground = Brushes.Black;
@@ -95,17 +97,25 @@ namespace e_Note.SubWindows
 
         private void Kész_Click(object sender, RoutedEventArgs e)
         {
-                string[] címkék = Címkék.Text.Split(',');
-                Jegyzet újjegyzet = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
-                options.JegyzetTörléseAFájlból(jindex, lista);
-                options.JegyzetHozzáadásAFájlhoz(újjegyzet);
-                Close();
+            string[] címkék = options.splitbycommas(Címkék.Text);
+            Jegyzet újjegyzet = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
+            options.JegyzetTörléseAFájlból(jindex, lista);
+            options.JegyzetHozzáadásAFájlhoz(újjegyzet);
+            Close();
         }
 
         private void DeleteJegyzet_Click(object sender, RoutedEventArgs e)
         {
             options.JegyzetTörléseAFájlból(jindex, lista);
             Close();
+        }
+
+        private void Noteedit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                MessageBox.Show(options.language.Content.NoteEditor_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace e_Note.Classes.Leanguages
                 Noteeditor_Title = "Note editor",
                 Noteeditor_Cim = "Title:",
                 Noteeditor_Tartalom = "Note:",
-                Noteeditor_Cimke = "Notes tags:\n"+"(comma separated)",
+                Noteeditor_Cimke = "Notes tags:\n" + "(comma separated)",
                 Noteeditor_Button = "Save",
                 Noteeditor_Delete = "Delete",
                 Notecreator_Title = "Note creator",
@@ -51,7 +51,17 @@ namespace e_Note.Classes.Leanguages
                 AddnewTable_Cim = "Title:",
                 AddnewTable_Tartalom = "Table:",
                 AddnewTable_Cimke = "Tables tags:\n" + "(comma separated)",
-                AddnewTable_Mentes = "Save"
+                AddnewTable_Mentes = "Save",
+                MainWindow_info = "" +
+                "You can execute commands from the search bar: mode->dark/light, language->HU/EN, view->grid/list, open->'word'(opens all note which contains this 'word'). " +
+                "You can edit your notes if you click on them. " +
+                "All of your changes will be saved automatically. " +
+                "You can create new notes with the '+' button (only simple notes at now).",
+                LoginWindow_info = "You have to open your save file for login. If you dont have one just click on the login button.",
+                AddWindow_info = "You can only create simple notes.",
+                NoteEditor_info = "You can add note tags separated with with comma's. You can search for the tags on the main window but cant see them.",
+                LoginWindow_exampleNote = "I am just an examole note"
+
             };
         }
     }

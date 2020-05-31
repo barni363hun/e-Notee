@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:e_Note.SubWindows"
         mc:Ignorable="d"
         Title="NoteEditor" Height="460" Width="800"
-        MinWidth="698" MinHeight="460">
+        MinWidth="698" MinHeight="460" KeyDown="Noteedit_KeyDown">
 
     <Grid x:Name="háttér">
         <Grid.Background>
