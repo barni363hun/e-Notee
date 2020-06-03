@@ -64,6 +64,7 @@ namespace e_Note.SubWindows
             címkékek = címkékek.Remove(címkékek.Length - 1);
             Címkék.Text = címkékek;
             Refresh();
+
         }
         private void CreateATextBox1()
 

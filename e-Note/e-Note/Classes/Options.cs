@@ -82,14 +82,9 @@ namespace e_Note.Classes
         }
         public void JegyzetTörléseAFájlból(int törlendőindexe,List<Jegyzet> jegyzets)
         {
-            if (törlendőindexe == 0)
-            {
-                jegyzets.Clear();
-            }
-            else
-            {
+            
                 jegyzets.Remove(jegyzets[törlendőindexe]);
-            }
+            
             string újfájl = this.Jegyzettömbstringbe(jegyzets);
             File.WriteAllText(this.path, this.crypto.EncryptStringAES(újfájl, this.password));
         }
