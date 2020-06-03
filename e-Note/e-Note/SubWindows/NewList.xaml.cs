@@ -91,8 +91,6 @@ namespace e_Note.SubWindows
 
         }
 
-
-
         private void CreateATextBox2()
 
         {
@@ -131,9 +129,15 @@ namespace e_Note.SubWindows
 
         private void Mentés_Click(object sender, RoutedEventArgs e)
         {
-            TextBox tbox = sender as TextBox;
+            string boxok = "";
+            
+            foreach (TextBox txbox in Listák.Children)
+            {
+                boxok += txbox.Text + ",";
+            }
+            
             string[] címkék = options.splitbycommas(Címkék.Text);
-            Jegyzet felvevendő = new Jegyzet("lista",L_Cim.Text, tbox.Text, címkék);
+            Jegyzet felvevendő = new Jegyzet("lista",Cim.Text, boxok, címkék);
             options.JegyzetHozzáadásAFájlhoz(felvevendő);
             Close();
         }

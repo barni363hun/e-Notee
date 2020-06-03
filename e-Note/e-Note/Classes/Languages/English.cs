@@ -56,9 +56,10 @@ namespace e_Note.Classes.Leanguages
                 "You can execute commands from the search bar: mode->dark/light, language->HU/EN, view->grid/list, open->'word'(opens all note which contains this 'word'). " +
                 "You can edit your notes if you click on them. " +
                 "All of your changes will be saved automatically. " +
-                "You can create new notes with the '+' button (only simple notes at now).",
+                "You can create new notes with the '+' button (you cant create tables at now)." +
+                "You can refresh your notes with the green button.",
                 LoginWindow_info = "You have to open your save file for login. If you dont have one just click on the login button.",
-                AddWindow_info = "You can only create simple notes.",
+                AddWindow_info = "You cant create tables at now.",
                 NoteEditor_info = "You can add note tags separated with with comma's. You can search for the tags on the main window but cant see them.",
                 LoginWindow_exampleNote = "I am just an examole note",
                 NewList_Title = "List creator",

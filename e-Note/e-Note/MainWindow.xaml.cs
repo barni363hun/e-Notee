@@ -48,6 +48,7 @@ namespace e_Note
         private void Refresh()
         {
             Main.Title = options.language.Content.MainWindow_Title;
+
             if (options.DarkMode)
             {
                 //dark mode
@@ -264,6 +265,12 @@ namespace e_Note
             {
                 MessageBox.Show(options.language.Content.MainWindow_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+        }
+
+        private void Refreshbutton_Click(object sender, RoutedEventArgs e)
+        {
+            jegyzetek = options.Fájlbeolvas();
+            Refresh();
         }
     }
 }

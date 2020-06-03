@@ -38,7 +38,24 @@ namespace e_Note.SubWindows
             kép.Add(myimage2);
             InitializeComponent();
             Cim.Text = jegyzet.Cim;
-            Tartalom.Text = jegyzet.Tartalom;
+
+            if (jegyzet.Típus == "lista")
+            {
+                Tartalom.Visibility = Visibility.Hidden;
+                listanézet.Visibility = Visibility.Visible;
+                
+                foreach (var item in options.splitbycommas(jegyzet.Tartalom))
+                {
+                    CreateATextBox2(item);
+                }
+            }
+            else
+            {
+                Tartalom.Visibility = Visibility.Visible;
+                listanézet.Visibility = Visibility.Hidden;
+                Tartalom.Text = jegyzet.Tartalom;
+
+            }
             string címkékek = "";
             foreach (var item in jegyzet.Címkék)
             {
@@ -48,7 +65,53 @@ namespace e_Note.SubWindows
             Címkék.Text = címkékek;
             Refresh();
         }
+        private void CreateATextBox1()
 
+        {
+
+            TextBox txtb = new TextBox();
+
+            txtb.Height = 30;
+
+            txtb.Width = 650;
+            txtb.HorizontalAlignment = HorizontalAlignment.Right;
+            txtb.FontSize = 22;
+
+
+
+            txtb.Background = new SolidColorBrush(Colors.White);
+
+            txtb.Foreground = new SolidColorBrush(Colors.Black);
+
+            Listák.Children.Add(txtb);
+
+        }
+
+        private void CreateATextBox2(string inputtext)
+        {
+
+            TextBox txtb = new TextBox();
+
+            txtb.Height = 30;
+            txtb.Name = "tbox";
+            txtb.Text = inputtext;
+            txtb.Width = 620;
+            txtb.FontSize = 22;
+
+            txtb.HorizontalAlignment = HorizontalAlignment.Right;
+
+
+            txtb.Background = new SolidColorBrush(Colors.White);
+
+
+            txtb.Foreground = new SolidColorBrush(Colors.Black);
+
+            Listák.Children.Add(txtb);
+            txtb.SelectionStart = txtb.Text.Length;
+            txtb.SelectionLength = 0;
+            txtb.Focus();
+
+        }
         private void Refresh()
         {
             Noteedit.Title = options.language.Content.Noteeditor_Title;
@@ -97,11 +160,35 @@ namespace e_Note.SubWindows
 
         private void Kész_Click(object sender, RoutedEventArgs e)
         {
+            string boxok = "";
+            string fajta = "";
+            if (listanézet.Visibility == Visibility.Visible)
+            {
+                foreach (TextBox txbox in Listák.Children)
+                {
+                    boxok += txbox.Text + ",";
+                }
+                fajta = "lista";
+            }
+            else
+            {
+                boxok = Tartalom.Text;
+                fajta = "sima";
+            }
             string[] címkék = options.splitbycommas(Címkék.Text);
-            Jegyzet újjegyzet = new Jegyzet("sima", Cim.Text, Tartalom.Text, címkék);
+            Jegyzet újjegyzet = new Jegyzet(fajta, Cim.Text, boxok, címkék);
             options.JegyzetTörléseAFájlból(jindex, lista);
             options.JegyzetHozzáadásAFájlhoz(újjegyzet);
             Close();
+        }
+
+        private void listanézet_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox tbox = sender as TextBox;
+            if (e.Key == Key.Enter)
+            {
+                CreateATextBox2(" - ");
+            }
         }
 
         private void DeleteJegyzet_Click(object sender, RoutedEventArgs e)

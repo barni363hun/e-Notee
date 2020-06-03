@@ -30,6 +30,11 @@
                 </Style>
             </TextBox.Resources>
         </TextBox>
+        <ScrollViewer x:Name="listanézet" Margin="95,72,-0.4,110.4" KeyDown="listanézet_KeyDown">
+            <StackPanel x:Name="Listák">
+
+            </StackPanel>
+        </ScrollViewer>
         <TextBox x:Name="Tartalom" HorizontalAlignment="Stretch" Margin="95,72,20,110" TextWrapping="Wrap"  VerticalAlignment="Stretch"   FontSize="18" BorderBrush="Black">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">

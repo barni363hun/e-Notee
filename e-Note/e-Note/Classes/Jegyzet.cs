@@ -25,6 +25,7 @@ namespace e_Note
         public const string adatokelválasztó = "ZgjGBluXS5bQlKPDGyAa";
         public const string címkékelválasztó = "zegShZXeBAxXtoEGTa7P";
         public const string jegyzetelválasztó = "hVNM8wwutyDL9479NRbP";
+        public const string felsoroláselválasztó = "Kp1rYOqKK22zVOeuNx4v";
 
         public Jegyzet(string típus,string cím,string tartalom,string[] címkék)
         {
