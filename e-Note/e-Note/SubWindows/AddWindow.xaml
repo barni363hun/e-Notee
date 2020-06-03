@@ -11,7 +11,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Assets/bgphoto.png"/>
         </Grid.Background>
-        <Button x:Name="Felsorolás" Content="Új felsorolást" BorderBrush="Black" BorderThickness="2" FontSize="24" HorizontalAlignment="Center" Margin="100,246,100,17" VerticalAlignment="Bottom" Height="50" Width="300" />
+        <Button x:Name="Felsorolás" Content="Új felsorolást" BorderBrush="Black" BorderThickness="2" FontSize="24" HorizontalAlignment="Center" Margin="100,246,100,17" VerticalAlignment="Bottom" Height="50" Width="300" Click="Felsorolás_Click" />
         <Button x:Name="Táblázat" Content="Új táblázatot" BorderBrush="Black" BorderThickness="2" FontSize="24" HorizontalAlignment="Center" Margin="100,70,100,0" VerticalAlignment="Center" Height="50" Width="300" Click="table_Click"/>
         <Button x:Name="Jegyzet" Content="Új jegyzetet" BorderBrush="Black" BorderThickness="2" FontSize="24" HorizontalAlignment="Center" Margin="100,90,100,0" VerticalAlignment="Top" Height="50" Width="300" Click="Button_Click" />
         <Label x:Name="Add" Content="Hozz létre:" FontSize="40" Height="70" HorizontalAlignment="Center" Margin="147,5,146.6,0" Width="300" VerticalAlignment="Top"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />

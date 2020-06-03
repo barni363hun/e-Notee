@@ -49,5 +49,10 @@ namespace e_Note.Classes.Leanguages
         public string NoteEditor_info;
         public string AddWindow_info;
         public string LoginWindow_exampleNote;
+        public string NewList_Title;
+        public string NewList_Content;
+        public string NewList_Tag;
+        public string NewList_Button;
+        public string NewList_Cim;
     }
 }

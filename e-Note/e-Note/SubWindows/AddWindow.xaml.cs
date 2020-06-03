@@ -99,5 +99,11 @@ namespace e_Note
                 MessageBox.Show(options.language.Content.AddWindow_info, "Help", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void Felsorolás_Click(object sender, RoutedEventArgs e)
+        {
+            NewList newlist = new NewList(options);
+            newlist.Show();
+        }
     }
 }

@@ -60,8 +60,12 @@ namespace e_Note.Classes.Leanguages
                 LoginWindow_info = "You have to open your save file for login. If you dont have one just click on the login button.",
                 AddWindow_info = "You can only create simple notes.",
                 NoteEditor_info = "You can add note tags separated with with comma's. You can search for the tags on the main window but cant see them.",
-                LoginWindow_exampleNote = "I am just an examole note"
-
+                LoginWindow_exampleNote = "I am just an examole note",
+                NewList_Title = "List creator",
+                NewList_Content = "List:",
+                NewList_Tag = "Lists tags:\n" + "(comma separated)",
+                NewList_Button = "Save",
+                NewList_Cim = "Title:"
             };
         }
     }

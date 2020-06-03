@@ -61,7 +61,12 @@ namespace e_Note.Classes.Leanguages
                 LoginWindow_info = "A bejelentkezéshez szükséges megnyitnod a mentésfájlodat. Ha még nincsen akkor a bejelentkezés gombra kattintva hozhatsz létre eggyet.",
                 AddWindow_info = "Még csak sima jegyzetet tudsz csinálni.",
                 NoteEditor_info = "A címkékhez vesszővel elválaszva tudsz megadni szavakat amelyekre lehet keresni viszont nem látszódnak.",
-                LoginWindow_exampleNote = "Ha bármilyen segítségre lenne szükséged nyomd meg az f1-gombot"
+                LoginWindow_exampleNote = "Ha bármilyen segítségre lenne szükséged nyomd meg az f1-gombot",
+                NewList_Title = "Felsorolás készítő",
+                NewList_Content = "Felsorolás:",
+                NewList_Tag = "Felsoroláshoz tartozó cimkék:\n" + "(vesszővel elválasztva)",
+                NewList_Button = "Mentés",
+                NewList_Cim = "Cím:"
             };
         }
     }

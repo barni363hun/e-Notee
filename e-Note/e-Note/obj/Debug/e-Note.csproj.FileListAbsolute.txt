@@ -73,3 +73,5 @@ D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.g.cs
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddnewTable.baml
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\Addtable.baml
 D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\AddWindow.baml
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NewList.g.cs
+D:\prog projekt\e-Notee\e-Note\e-Note\obj\Debug\SubWindows\NewList.baml
